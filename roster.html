@@ -175,9 +175,14 @@
   table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
     font-size: 14px;
     min-width: 480px;
   }
+
+  th:first-child, td:first-child { width: 44%; }
+  th:nth-child(2), td:nth-child(2) { width: 28%; }
+  th:nth-child(3), td:nth-child(3) { width: 28%; }
 
   th, td {
     text-align: left;
