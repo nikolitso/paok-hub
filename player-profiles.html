@@ -1,0 +1,768 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAOK Player Profiles 2026-27</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --ink: #16171a;
+    --ink-dim: #55585f;
+    --line: #d9d9d5;
+    --accent: #1c1f6b;
+    --accent-soft: #e7e8f5;
+    --good: #1a7a4c;
+    --good-soft: #e5f3ec;
+    --bad: #a4402a;
+    --bad-soft: #f7e9e5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101114;
+      --surface: #17181c;
+      --surface-2: #1d1f24;
+      --ink: #edeeef;
+      --ink-dim: #9a9ca3;
+      --line: #2b2d33;
+      --accent: #8f96ff;
+      --accent-soft: #232650;
+      --good: #4fce94;
+      --good-soft: #163227;
+      --bad: #e8917c;
+      --bad-soft: #3a231e;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --surface: #17181c;
+    --surface-2: #1d1f24;
+    --ink: #edeeef;
+    --ink-dim: #9a9ca3;
+    --line: #2b2d33;
+    --accent: #8f96ff;
+    --accent-soft: #232650;
+    --good: #4fce94;
+    --good-soft: #163227;
+    --bad: #e8917c;
+    --bad-soft: #3a231e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.page-head {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Archivo", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.5vw, 42px);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .sub {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 66ch;
+    margin: 0;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .meta-pill {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+
+  .pos-group {
+    margin-top: 40px;
+  }
+
+  .pos-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    margin: 0 0 14px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+  }
+
+  .pos-label .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  .p-card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 16px 18px;
+  }
+
+  .p-card h3 {
+    font-family: "Archivo", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+
+  .p-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .p-row-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    flex: none;
+    width: 78px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .chip.good { background: var(--good-soft); color: var(--good); }
+  .chip.bad { background: var(--bad-soft); color: var(--bad); }
+  .chip .tier {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9.5px;
+    opacity: 0.75;
+  }
+
+  .chip-none {
+    font-size: 12px;
+    color: var(--ink-dim);
+    font-style: italic;
+  }
+
+  .p-style {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12.5px;
+    color: var(--ink-dim);
+  }
+
+  .p-style li {
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+
+  .p-style li::before {
+    content: "\2013";
+    position: absolute;
+    left: 0;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 20px 0 0;
+    font-size: 12.5px;
+    color: var(--ink-dim);
+  }
+
+  .legend .chip { pointer-events: none; }
+
+  footer.page-foot {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+  }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="page-head">
+    <p class="eyebrow">PAOK Hub &middot; Reference</p>
+    <h1>Player Profiles</h1>
+    <p class="sub">Playing-style characteristics for the full squad &mdash; strengths, weaknesses, and habitual style of play &mdash; for reading how a starting XI fits together.</p>
+    <div class="meta-row">
+      <span class="meta-pill">29 players</span>
+    </div>
+    <div class="legend">
+      <span class="chip good">Strong <span class="tier">/ Very Strong</span></span>
+      <span class="chip bad">Weak <span class="tier">/ Very Weak</span></span>
+    </div>
+  </header>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Goalkeepers</p>
+    <div class="card-grid">
+
+      <div class="p-card">
+        <h3>Tsiftsis</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Defensive blocks &amp; reflexes</span>
+          <span class="chip good">Aerial claiming / concentration</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Long-ball accuracy</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to play short passes out of the back</li>
+          <li>Active clearing inside the box</li>
+          <li>Disciplined positioning, rarely fouls</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Pavlenka</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Concentration</span>
+          <span class="chip good">Penalty saving</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip-none">No significant weaknesses</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to punch the ball clear</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Defenders</p>
+    <div class="card-grid">
+
+      <div class="p-card">
+        <h3>Michailidis</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Passing / distribution</span>
+          <span class="chip good">Interceptions / aerial duels</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Discipline</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to play long crossfield balls to switch play</li>
+          <li>Prefers positional containment over diving into tackles</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Chatzidiakos</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Key passes</span>
+          <span class="chip good">Crossing</span>
+          <span class="chip good">Passing</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+        </div>
+        <ul class="p-style">
+          <li>Plays the ball off the ground often</li>
+          <li>Likes to play long balls</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Elustondo</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip-none">No significant strengths</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+          <span class="chip bad">Discipline</span>
+          <span class="chip bad">Tackling</span>
+        </div>
+        <ul class="p-style">
+          <li>Does not dive into tackles</li>
+          <li>Clears the ball out of defence often</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Giannoulis</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Key passes</span>
+          <span class="chip good">Crossing</span>
+          <span class="chip good">Ball interception</span>
+          <span class="chip good">Concentration</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to dribble</li>
+          <li>Does not dive into tackles</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Baba</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
+          <span class="chip good">Tackling</span>
+          <span class="chip good">Concentration</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip-none">No significant weaknesses</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to shoot from distance</li>
+          <li>Likes to tackle</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Kenny</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
+          <span class="chip good">Holding on to the ball</span>
+          <span class="chip good">Passing</span>
+          <span class="chip good">Tackling</span>
+          <span class="chip good">Blocking the ball</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Finishing</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to shoot from distance</li>
+          <li>Likes to play long balls</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Diego Costa</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Aerial duels</span>
+          <span class="chip good">Passing</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip-none">No significant weaknesses</span>
+        </div>
+        <ul class="p-style">
+          <li>Indirect set-piece threat</li>
+          <li>Clears the ball out of defence often</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Bataoulas</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Aerial prowess</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Experience / overcommitment</span>
+        </div>
+        <ul class="p-style">
+          <li>Dominant box defender, clears danger early</li>
+          <li>Comfortable playing out from deep with either foot</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Midfielders</p>
+    <div class="card-grid">
+
+      <div class="p-card">
+        <h3>Santamaria</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Aerial duels</span>
+          <span class="chip good">Blocking the ball</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Concentration</span>
+        </div>
+        <ul class="p-style">
+          <li>Plays the ball off the ground often</li>
+          <li>Likes to play long balls</li>
+          <li>Likes to shoot from distance</li>
+          <li>Gets fouled often</li>
+          <li>Does not dive into tackles</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Meite</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip-none">No significant strengths</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip-none">No significant weaknesses</span>
+        </div>
+        <ul class="p-style">
+          <li>Gets fouled often</li>
+          <li>Indirect set-piece threat</li>
+          <li>Likes to dribble</li>
+          <li>Likes to shoot from distance</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Thymianis</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Tackling / blocking</span>
+          <span class="chip good">Aggression / stamina</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Pace / agility</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to break down opposition counters early</li>
+          <li>Plays simple, short sideways passes</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Zafeiris</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Passing economy</span>
+          <span class="chip good">Ball retention</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes short, quick combination triangles</li>
+          <li>Looks to slide progressive balls into attacking pockets</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Ugresic</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Off-the-ball movement</span>
+          <span class="chip good">Finishing</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Defensive contribution</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to arrive late in the box to convert crosses</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Camara</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Aerial duels</span>
+          <span class="chip good">Through balls</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip-none">No significant weaknesses</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to shoot from distance</li>
+          <li>Commits fouls often</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Louchet</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Aerial duels</span>
+          <span class="chip good">Direct free-kicks</span>
+          <span class="chip good">Finishing</span>
+          <span class="chip good">Tackling</span>
+          <span class="chip good">Blocking the ball</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Discipline</span>
+          <span class="chip bad">Defensive contribution</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to shoot from distance</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Taylor</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Holding on to the ball</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Passing</span>
+          <span class="chip good">Key passes</span>
+          <span class="chip good">Concentration</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Crossing</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to play short passes</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Jakic</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip-none">No significant strengths</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Concentration</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to play long balls</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Attacking midfielders</p>
+    <div class="card-grid">
+
+      <div class="p-card">
+        <h3>Pelkas</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Finishing</span>
+          <span class="chip good">Long shots</span>
+          <span class="chip good">Holding on to the ball</span>
+          <span class="chip good">Defensive contribution</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Passing</span>
+          <span class="chip bad">Crossing</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to cut inside</li>
+          <li>Likes to dribble</li>
+          <li>Likes to do layoffs</li>
+          <li>Commits fouls often</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Shoretire</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Defensive contribution</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+          <span class="chip bad">Crossing</span>
+        </div>
+        <ul class="p-style">
+          <li>Gets fouled often</li>
+          <li>Commits fouls often</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Ali</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Dribbling &amp; 1v1</span>
+          <span class="chip good">Chance creation</span>
+          <span class="chip good">Pace &amp; agility</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+          <span class="chip bad">Defensive contribution</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to cut inside (inverted winger)</li>
+          <li>Fouled frequently</li>
+          <li>High-volume dribbler, seeks direct duels</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Taison</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Finishing</span>
+          <span class="chip good">Through balls</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip-none">No significant weaknesses</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to do layoffs</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Zivkovic</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Passing</span>
+          <span class="chip good">Through balls</span>
+          <span class="chip good">Key passes</span>
+          <span class="chip good">Dribbling</span>
+          <span class="chip good">Holding on to the ball</span>
+          <span class="chip good">Defensive contribution</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Aerial duels</span>
+          <span class="chip bad">Finishing</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to do layoffs</li>
+          <li>Likes to play short passes</li>
+          <li>Likes to dribble</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Despodov</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Key passes / crossing</span>
+          <span class="chip good">Dribbling</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Defensive work rate</span>
+        </div>
+        <ul class="p-style">
+          <li>Likes to cut inside onto his stronger foot to shoot</li>
+          <li>Delivers dangerous set-pieces</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Chatsidis</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Work rate / pressing</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Decision making</span>
+        </div>
+        <ul class="p-style">
+          <li>Tries to stretch opposing lines with quick vertical runs wide</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Forwards</p>
+    <div class="card-grid">
+
+      <div class="p-card">
+        <h3>Ndiaye</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good">Finishing</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad"><span class="tier">Very Weak</span> Discipline</span>
+          <span class="chip bad">Aerial duels</span>
+        </div>
+        <ul class="p-style">
+          <li>Gets fouled often</li>
+          <li>Counter-attack threat</li>
+          <li>Commits fouls often</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Mythou</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Finishing</span>
+          <span class="chip good">Attacking positioning</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad">Hold-up play</span>
+        </div>
+        <ul class="p-style">
+          <li>Plays on the shoulder of the last defender</li>
+          <li>Extremely direct, shoots quickly once in the box</li>
+        </ul>
+      </div>
+
+      <div class="p-card">
+        <h3>Banza</h3>
+        <div class="p-row"><span class="p-row-label">Strengths</span>
+          <span class="chip good"><span class="tier">Strong</span> Finishing</span>
+          <span class="chip good"><span class="tier">Strong</span> Headed attempts</span>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+          <span class="chip bad"><span class="tier">Weak</span> Passing</span>
+        </div>
+        <ul class="p-style">
+          <li>Indirect set-piece threat</li>
+          <li>Plays the ball off the ground often</li>
+          <li>Commits fouls often</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+</body>
+</html>

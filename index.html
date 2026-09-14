@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAOK Hub &mdash; Reference</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --ink: #16171a;
+    --ink-dim: #55585f;
+    --line: #d9d9d5;
+    --accent: #1c1f6b;
+    --accent-soft: #e7e8f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101114;
+      --surface: #17181c;
+      --surface-2: #1d1f24;
+      --ink: #edeeef;
+      --ink-dim: #9a9ca3;
+      --line: #2b2d33;
+      --accent: #8f96ff;
+      --accent-soft: #232650;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --surface: #17181c;
+    --surface-2: #1d1f24;
+    --ink: #edeeef;
+    --ink-dim: #9a9ca3;
+    --line: #2b2d33;
+    --accent: #8f96ff;
+    --accent-soft: #232650;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 56px 24px 96px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "Archivo", ui-sans-serif, sans-serif;
+    font-weight: 800; font-size: clamp(32px, 5vw, 46px);
+    letter-spacing: -0.01em; margin: 0 0 10px; text-wrap: balance;
+  }
+  .sub { color: var(--ink-dim); font-size: 15.5px; max-width: 60ch; margin: 0 0 40px; }
+  .section-head {
+    margin: 40px 0 14px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-dim); font-weight: 600;
+    border-bottom: 2px solid var(--ink); padding-bottom: 10px;
+  }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--surface); text-decoration: none; color: var(--ink);
+    transition: border-color 0.15s ease;
+  }
+  .card:hover, .card:focus-visible { border-color: var(--accent); outline: none; }
+  .card .name { font-weight: 600; font-size: 14.5px; }
+  .card .desc { font-size: 12px; color: var(--ink-dim); margin-top: 3px; }
+  .card .go { flex: none; font-family: "IBM Plex Mono", monospace; color: var(--ink-dim); font-size: 12.5px; }
+  footer.page-foot {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink-dim);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">PAOK Hub</p>
+  <h1>Reference</h1>
+  <p class="sub">Season stats, ratings, referee log, and roster reference pages for PAOK FC &mdash; updated after every matchday.</p>
+
+  <p class="section-head">2026&ndash;27 season</p>
+  <div class="grid">
+    <a class="card" href="match-reports.html">
+      <span><span class="name">Match Reports</span><br><span class="desc">Matchday-by-matchday links to full player stats</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="season-stats.html">
+      <span><span class="name">Season Stats</span><br><span class="desc">Per-player season totals by position</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="player-ratings.html">
+      <span><span class="name">Player Ratings</span><br><span class="desc">Match-by-match ratings and season averages</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="vs-opponents.html">
+      <span><span class="name">PAOK vs Opponents</span><br><span class="desc">Team averages compared with opponents</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="roster.html">
+      <span><span class="name">Roster &amp; Form</span><br><span class="desc">Current squad and recent form</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="player-profiles.html">
+      <span><span class="name">Player Profiles</span><br><span class="desc">Individual player breakdowns</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="refs.html">
+      <span><span class="name">PAOK &amp; Refs</span><br><span class="desc">Referee and VAR decision log</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+  </div>
+
+  <p class="section-head">2025&ndash;26 season (archive)</p>
+  <div class="grid">
+    <a class="card" href="season-stats-2025-26.html">
+      <span><span class="name">Season Stats</span><br><span class="desc">Full 2025&ndash;26 season totals</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="player-ratings-2025-26.html">
+      <span><span class="name">Player Ratings</span><br><span class="desc">Full 2025&ndash;26 season averages</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+    <a class="card" href="vs-opponents-2025-26.html">
+      <span><span class="name">PAOK vs Opponents</span><br><span class="desc">Full 2025&ndash;26 season comparison</span></span>
+      <span class="go">&rarr;</span>
+    </a>
+  </div>
+
+  <footer class="page-foot">PAOK Hub &middot; paokhub.substack.com</footer>
+
+</div>
+</body>
+</html>

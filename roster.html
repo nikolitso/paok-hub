@@ -1,0 +1,465 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAOK Roster &amp; Form</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --ink: #16171a;
+    --ink-dim: #55585f;
+    --line: #d9d9d5;
+    --accent: #1c1f6b;
+    --accent-soft: #e7e8f5;
+    --good: #1a7a4c;
+    --warn: #a15b00;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101114;
+      --surface: #17181c;
+      --surface-2: #1d1f24;
+      --ink: #edeeef;
+      --ink-dim: #9a9ca3;
+      --line: #2b2d33;
+      --accent: #8f96ff;
+      --accent-soft: #232650;
+      --good: #4fce94;
+      --warn: #e0a94f;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --surface: #17181c;
+    --surface-2: #1d1f24;
+    --ink: #edeeef;
+    --ink-dim: #9a9ca3;
+    --line: #2b2d33;
+    --accent: #8f96ff;
+    --accent-soft: #232650;
+    --good: #4fce94;
+    --warn: #e0a94f;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.page-head {
+    margin-bottom: 44px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Archivo", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.5vw, 42px);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .sub {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .meta-pill {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+
+  section.block {
+    margin-top: 52px;
+  }
+
+  .block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+
+  .block-head h2 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+
+  .block-head .note {
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    font-family: "IBM Plex Mono", monospace;
+  }
+
+  .pos-group {
+    margin-top: 26px;
+  }
+
+  .pos-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .pos-label .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 480px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 9px 14px;
+    white-space: nowrap;
+  }
+
+  thead th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--line);
+  }
+
+  td.num, th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+  }
+
+  td.player {
+    font-weight: 600;
+  }
+
+  .dash { color: var(--ink-dim); }
+
+  .g-pos { color: var(--good); font-weight: 600; }
+  .a-pos { color: var(--accent); font-weight: 600; }
+
+  .no-cap {
+    text-align: center;
+    color: var(--ink-dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    padding: 8px 0 0;
+  }
+
+  footer.page-foot {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+  }
+
+  footer.page-foot a { color: var(--ink-dim); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    section.block { animation: rise 0.4s ease both; }
+    section.block:nth-of-type(2) { animation-delay: 0.05s; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="page-head">
+    <p class="eyebrow">PAOK Hub &middot; Reference</p>
+    <h1>Roster &amp; Form, 2026&ndash;27</h1>
+    <p class="sub">Contracts, salaries, and Super League season stats for the current squad, tabulated from the Roster 2026&ndash;27 and Season Stats posts.</p>
+    <div class="meta-row">
+      <span class="meta-pill">24 players</span>
+      <span class="meta-pill">Updated Aug 29, 2026</span>
+      <span class="meta-pill">After matchday 1</span>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>Contracts &amp; Salaries</h2>
+      <span class="note">Transfermarkt &middot; reported salaries</span>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Τερματοφύλακες</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Player</th><th>Contract until</th><th class="num">Annual salary</th></tr></thead>
+          <tbody>
+            <tr><td class="player">Tsiftsis</td><td>30/6/2028</td><td class="num dash">&mdash;</td></tr>
+            <tr><td class="player">Pavlenka</td><td>30/6/2027</td><td class="num">&euro;600,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Αμυντικοί</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Player</th><th>Contract until</th><th class="num">Annual salary</th></tr></thead>
+          <tbody>
+            <tr><td class="player">Michailidis</td><td>30/6/2027</td><td class="num">&euro;600,000</td></tr>
+            <tr><td class="player">Chatzidiakos</td><td>30/6/2029</td><td class="num">&euro;1,000,000</td></tr>
+            <tr><td class="player">Elustondo</td><td>30/6/2028</td><td class="num">&euro;1,200,000</td></tr>
+            <tr><td class="player">Giannoulis</td><td>30/6/2029</td><td class="num">&euro;1,200,000</td></tr>
+            <tr><td class="player">Baba</td><td>30/6/2027</td><td class="num">&euro;1,000,000</td></tr>
+            <tr><td class="player">Gomez</td><td>30/6/2027</td><td class="num">&euro;300,000</td></tr>
+            <tr><td class="player">Kenny</td><td>30/6/2028</td><td class="num">&euro;1,600,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Μέσοι</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Player</th><th>Contract until</th><th class="num">Annual salary</th></tr></thead>
+          <tbody>
+            <tr><td class="player">Santamaria</td><td>30/6/2027</td><td class="num">&euro;600,000</td></tr>
+            <tr><td class="player">Meite</td><td>30/6/2027</td><td class="num">&euro;1,300,000</td></tr>
+            <tr><td class="player">Thymianis</td><td>30/6/2027</td><td class="num">&euro;160,000</td></tr>
+            <tr><td class="player">Zafeiris</td><td>31/12/2029</td><td class="num">&euro;1,600,000</td></tr>
+            <tr><td class="player">Ugresic</td><td>30/6/2031</td><td class="num dash">&mdash;</td></tr>
+            <tr><td class="player">Camara</td><td>30/6/2027</td><td class="num">&euro;1,200,000</td></tr>
+            <tr><td class="player">Louchet</td><td>30/6/2030</td><td class="num dash">&mdash;</td></tr>
+            <tr><td class="player">Taylor</td><td>30/6/2028</td><td class="num">&euro;800,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Μεσοεπιθετικοί</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Player</th><th>Contract until</th><th class="num">Annual salary</th></tr></thead>
+          <tbody>
+            <tr><td class="player">Pelkas</td><td>30/6/2027</td><td class="num">&euro;650,000</td></tr>
+            <tr><td class="player">Shoretire</td><td>30/6/2028</td><td class="num">&euro;300,000</td></tr>
+            <tr><td class="player">Ali</td><td>30/6/2029</td><td class="num dash">&mdash;</td></tr>
+            <tr><td class="player">Taison</td><td>30/6/2027</td><td class="num">&euro;650,000</td></tr>
+            <tr><td class="player">Zivkovic</td><td>30/6/2027</td><td class="num">&euro;1,500,000</td></tr>
+            <tr><td class="player">Despodov</td><td>30/6/2027</td><td class="num">&euro;1,000,000</td></tr>
+            <tr><td class="player">Chatsidis</td><td>30/6/2028</td><td class="num dash">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Επιθετικοί</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Player</th><th>Contract until</th><th class="num">Annual salary</th></tr></thead>
+          <tbody>
+            <tr><td class="player">Ndiaye</td><td>30/6/2027</td><td class="num">&euro;1,000,000</td></tr>
+            <tr><td class="player">Mythou</td><td>30/6/2028</td><td class="num dash">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>Season Stats &mdash; Super League</h2>
+      <span class="note">FBref &middot; Sofascore &middot; after MD1</span>
+    </div>
+    <p class="no-cap">Μόνο πρωτάθλημα &middot; ΠΑΟΚ 4&ndash;0 Λεβαδειακός</p>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Τερματοφύλακες</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Player</th><th class="num">MP</th><th class="num">Goals conceded</th><th class="num">Saves</th><th class="num">Y</th><th class="num">R</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="player">Pavlenka</td><td class="num">1</td><td class="num dash">&mdash;</td><td class="num dash">&mdash;</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Tsiftsis</td><td class="num">0</td><td class="num dash">&mdash;</td><td class="num dash">&mdash;</td><td class="num">0</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="no-cap">Goals conceded / saves aren&rsquo;t in the source stats post &mdash; add them here once you have a source.</p>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Αμυντικοί</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Player</th><th class="num">MP</th><th class="num">Goals</th>
+            <th class="num">xG</th><th class="num">Shots</th><th class="num">SoT</th><th class="num">Y</th><th class="num">R</th><th class="num">Fouls for</th><th class="num">Fouls against</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="player">Elustondo</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Kenny</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
+            <tr><td class="player">Michailidis</td><td class="num">1</td><td class="num">0</td><td class="num">0.08</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">2</td></tr>
+            <tr><td class="player">Baba</td><td class="num">1</td><td class="num">0</td><td class="num">0.01</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td></tr>
+            <tr><td class="player">Chatzidiakos</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Giannoulis</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Gomez</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Μέσοι</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Player</th><th class="num">MP</th><th class="num">Goals</th>
+            <th class="num">xG</th><th class="num">Shots</th><th class="num">SoT</th><th class="num">Y</th><th class="num">R</th><th class="num">Fouls for</th><th class="num">Fouls against</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="player">Santamaria</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">1</td></tr>
+            <tr><td class="player">Thymianis</td><td class="num">1</td><td class="num">0</td><td class="num">0.02</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
+            <tr><td class="player">Taylor</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">2</td></tr>
+            <tr><td class="player">Louchet</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5</td></tr>
+            <tr><td class="player">Zafeiris</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Camara</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Meite</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Μεσοεπιθετικοί</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Player</th><th class="num">MP</th><th class="num">Goals</th>
+            <th class="num">xG</th><th class="num">Shots</th><th class="num">SoT</th><th class="num">Y</th><th class="num">R</th><th class="num">Fouls for</th><th class="num">Fouls against</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="player">Zivkovic</td><td class="num">1</td><td class="num g-pos">1</td><td class="num">1.02</td><td class="num">4</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
+            <tr><td class="player">Pelkas</td><td class="num">1</td><td class="num g-pos">1</td><td class="num">0.18</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">1</td></tr>
+            <tr><td class="player">Shoretire</td><td class="num">1</td><td class="num g-pos">1</td><td class="num">0.16</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td></tr>
+            <tr><td class="player">Chatsidis</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
+            <tr><td class="player">Taison</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr><td class="player">Ali</td><td class="num">0</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pos-group">
+      <p class="pos-label"><span class="dot"></span>Επιθετικοί</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Player</th><th class="num">MP</th><th class="num">Goals</th>
+            <th class="num">xG</th><th class="num">Shots</th><th class="num">SoT</th><th class="num">Y</th><th class="num">R</th><th class="num">Fouls for</th><th class="num">Fouls against</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="player">Mythou</td><td class="num">1</td><td class="num g-pos">1</td><td class="num">0.68</td><td class="num">3</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td></tr>
+            <tr><td class="player">Ndiaye</td><td class="num">1</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num">4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-foot">
+    <span>Team xG 2.15 vs 4 goals scored &middot; no cards in the opener.</span>
+    <span>Despodov and Ali not yet used this Super League season.</span>
+    <span>Sources: Transfermarkt, FBref, Sofascore.</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

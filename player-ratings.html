@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player Ratings 2026-27</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  :root{
+    --ink:#16181d; --sub:#5b6270; --line:#e6e4de; --bg:#fdfcfa; --card:#ffffff;
+    --accent:#1c1f6b; --accent-soft:#eceeff;
+    --hi-bg:#eaf3ec; --hi-fg:#2c6e45;
+    --lo-bg:#fbe9e7; --lo-fg:#9c3a2e;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#e7e6e1; --sub:#a2a7b3; --line:#33353c; --bg:#15161a; --card:#1c1e24;
+      --accent:#8f96ff; --accent-soft:#242850;
+      --hi-bg:#1f3226; --hi-fg:#7fd39d;
+      --lo-bg:#3a2422; --lo-fg:#f0a396;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#e7e6e1; --sub:#a2a7b3; --line:#33353c; --bg:#15161a; --card:#1c1e24;
+    --accent:#8f96ff; --accent-soft:#242850;
+    --hi-bg:#1f3226; --hi-fg:#7fd39d;
+    --lo-bg:#3a2422; --lo-fg:#f0a396;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;padding:44px 24px 72px;background:var(--bg);color:var(--ink);
+       font-family:'IBM Plex Sans',system-ui,sans-serif;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .overline{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;
+       color:var(--accent);font-weight:600;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;margin:0 0 8px;letter-spacing:-.01em;}
+  .subtitle{color:var(--sub);font-size:15px;margin:0 0 20px;line-height:1.55;max-width:620px;}
+
+  .method{background:var(--card);border:1px solid var(--line);border-radius:10px;
+       padding:14px 16px;font-size:12.5px;color:var(--sub);line-height:1.6;margin-bottom:34px;}
+  .method b{color:var(--ink);}
+  .method code{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:var(--accent-soft);
+       color:var(--accent);padding:1px 5px;border-radius:4px;}
+
+  .section-title{font-family:'Archivo',sans-serif;font-size:20px;font-weight:800;margin:0 0 4px;}
+  .section-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--sub);
+       margin:0 0 14px;letter-spacing:.03em;}
+
+  table{width:100%;border-collapse:collapse;table-layout:fixed;margin-bottom:38px;}
+  th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;
+       text-transform:uppercase;color:var(--sub);font-weight:500;text-align:left;
+       padding:8px 10px;border-bottom:1px solid var(--line);}
+  th.num, td.num{text-align:right;}
+  th:first-child, td:first-child{width:36%;}
+  th:nth-child(2), td:nth-child(2){width:18%;}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:13.5px;}
+  td.name{font-weight:600;}
+  td.rating{font-variant-numeric:tabular-nums;font-weight:700;font-family:'IBM Plex Mono',monospace;}
+  .apps{color:var(--sub);font-size:13.5px;}
+
+  .group-row td{padding:12px 10px 8px;border-bottom:none;font-family:'IBM Plex Mono',monospace;
+       font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);}
+  .group-row:first-child td{padding-top:8px;}
+  .group-row .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);
+       display:inline-block;margin-right:8px;}
+
+  .footer{margin-top:6px;padding-top:16px;border-top:1px solid var(--line);color:var(--sub);font-size:12px;}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<div class="overline">PAOK HUB &middot; PLAYER RATINGS</div>
+<h1>Player Ratings 2026&ndash;27</h1>
+<p class="subtitle">Player ratings (1&ndash;10 scale), calculated from each match's real statistics &mdash; same source table as the Match Reports page.</p>
+
+<div class="section-title">Season average</div>
+<p class="section-sub">After matchday 4 &middot; players who have appeared only</p>
+<div class="method" style="margin-bottom:20px;display:flex;align-items:baseline;gap:10px;">
+  <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:28px;color:var(--accent);">7.1</span>
+  <span>Team average &mdash; the weighted mean of every player's rating across every match they appeared in (64 appearances over 4 matchdays).</span>
+</div>
+<table>
+  <thead><tr><th>Player</th><th class="num">Min</th><th class="num">Avg</th><th class="num">Apps</th></tr></thead>
+  <tbody>
+    <tr class="group-row"><td colspan="4"><span class="dot"></span>Goalkeepers</td></tr>
+    <tr><td class="name">Pavlenka</td><td class="num">360</td><td class="num">8.0</td><td class="num apps">4</td></tr>
+
+    <tr class="group-row"><td colspan="4"><span class="dot"></span>Defenders</td></tr>
+    <tr><td class="name">Baba</td><td class="num">270</td><td class="num">7.6</td><td class="num apps">3</td></tr>
+    <tr><td class="name">Diego Costa</td><td class="num">90</td><td class="num">7.5</td><td class="num apps">1</td></tr>
+    <tr><td class="name">Michailidis</td><td class="num">315</td><td class="num">7.3</td><td class="num apps">4</td></tr>
+    <tr><td class="name">Kenny</td><td class="num">360</td><td class="num">7.1</td><td class="num apps">4</td></tr>
+    <tr><td class="name">Elustondo</td><td class="num">195</td><td class="num">6.3</td><td class="num apps">3</td></tr>
+    <tr><td class="name">Giannoulis</td><td class="num">89</td><td class="num">6.3</td><td class="num apps">1</td></tr>
+    <tr><td class="name">Hatzidiakos</td><td class="num">45</td><td class="num">6.5</td><td class="num apps">1</td></tr>
+    <tr><td class="name">Bataoulas</td><td class="num">72</td><td class="num">5.9</td><td class="num apps">1</td></tr>
+
+    <tr class="group-row"><td colspan="4"><span class="dot"></span>Midfielders</td></tr>
+    <tr><td class="name">Zafeiris</td><td class="num">229</td><td class="num">6.9</td><td class="num apps">3</td></tr>
+    <tr><td class="name">Jakic</td><td class="num">26</td><td class="num">6.9</td><td class="num apps">1</td></tr>
+    <tr><td class="name">Santamaria</td><td class="num">113</td><td class="num">6.8</td><td class="num apps">3</td></tr>
+    <tr><td class="name">Louchet</td><td class="num">78</td><td class="num">6.8</td><td class="num apps">1</td></tr>
+    <tr><td class="name">Taylor</td><td class="num">125</td><td class="num">6.8</td><td class="num apps">2</td></tr>
+    <tr><td class="name">M. Camara</td><td class="num">49</td><td class="num">6.7</td><td class="num apps">2</td></tr>
+    <tr><td class="name">Thymianis</td><td class="num">21</td><td class="num">6.6</td><td class="num apps">2</td></tr>
+
+    <tr class="group-row"><td colspan="4"><span class="dot"></span>Attacking midfielders</td></tr>
+    <tr><td class="name">Pelkas</td><td class="num">252</td><td class="num">7.6</td><td class="num apps">4</td></tr>
+    <tr><td class="name">Zivkovic</td><td class="num">301</td><td class="num">7.7</td><td class="num apps">4</td></tr>
+    <tr><td class="name">Shoretire</td><td class="num">78</td><td class="num">7.9</td><td class="num apps">1</td></tr>
+    <tr><td class="name">Ugresic</td><td class="num">105</td><td class="num">7.3</td><td class="num apps">2</td></tr>
+    <tr><td class="name">Ali</td><td class="num">146</td><td class="num">7.0</td><td class="num apps">3</td></tr>
+    <tr><td class="name">Taison</td><td class="num">100</td><td class="num">6.8</td><td class="num apps">3</td></tr>
+    <tr><td class="name">Chatsidis</td><td class="num">105</td><td class="num">6.6</td><td class="num apps">4</td></tr>
+
+    <tr class="group-row"><td colspan="4"><span class="dot"></span>Forwards</td></tr>
+    <tr><td class="name">Ndiaye</td><td class="num">322</td><td class="num">6.9</td><td class="num apps">4</td></tr>
+    <tr><td class="name">Mythou</td><td class="num">38</td><td class="num">6.9</td><td class="num apps">3</td></tr>
+  </tbody>
+</table>
+
+<div class="method">
+  Scale: 3.0&ndash;10.0. Base: 6.5.
+  <br><br>
+  All positions: Goal +0.8, Assist +0.5, Yellow card &minus;0.4, Red card &minus;2.0, Offside &minus;0.05, Foul conceded &minus;0.05, Foul won +0.03.
+  <br><br>
+  Goalkeepers: Save +0.2, Clean sheet +0.3, (Opponent xG &minus; goals conceded) &times; 1.0, Passes +0.01 each up to +0.2.
+  <br><br>
+  Defenders: Tackle +0.15, Blocked shot +0.15, Clean sheet +0.6, else Goals conceded &minus;0.25 each up to a maximum of &minus;0.50 per match, Passes +0.01 each up to +0.3, Shot on target +0.05, Shot off target +0.02, Interception +0.12.
+  <br><br>
+  Midfielders: Passes +0.01 each up to +0.7, Tackle +0.12, Blocked shot +0.08, Interception +0.10, Shot created +0.05.
+  <br><br>
+  Attacking midfielders &amp; forwards: Shot on target +0.08, Shot off target +0.03, Passes +0.01 each up to +0.4, Tackle +0.06, Blocked shot +0.06, Corner won +0.04, Interception +0.06, Shot created +0.05.
+  <br><br>
+  Season average = mean of a player's own per-match ratings across matches played, not a season total.
+  <br><br>
+  <b>Data note:</b> a planned universal +0.03-per-corner-won term (all positions) could not be added this update &mdash; Opta doesn't expose per-player corners won on this competition's match pages. The new Interception terms above are also based on Matchday&nbsp;1 only: Opta's per-match interceptions widget failed to load for MD2&ndash;4 after repeated retries, so ratings for matches 2&ndash;4 carry no interception bonus yet. Shot-created bonuses are complete for all 4 matches.
+</div>
+
+</div>
+
+</body>
+</html>
