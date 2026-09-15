@@ -208,11 +208,29 @@
     transform: translateY(-1px);
   }
 
+  .p-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 12px;
+  }
+
+  .p-thumb {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+  }
+
   .p-card h3 {
     font-family: "Archivo", sans-serif;
     font-size: 17px;
     font-weight: 700;
-    margin: 0 0 12px;
+    margin: 0;
   }
 
   .p-row {
@@ -352,7 +370,7 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <h3>Tsiftsis</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/99_Tsiftsis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Tsiftsis</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Defensive blocks &amp; reflexes</span>
           <span class="chip good">Aerial claiming / concentration</span>
@@ -368,7 +386,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Pavlenka</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/1_Pavlenka_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Pavlenka</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Concentration</span>
           <span class="chip good">Penalty saving</span>
@@ -389,7 +407,7 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <h3>Michailidis</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/5_Michailidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Michailidis</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Passing / distribution</span>
           <span class="chip good">Interceptions / aerial duels</span>
@@ -404,7 +422,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Chatzidiakos</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/4_Hatzidiakos_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Chatzidiakos</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Key passes</span>
           <span class="chip good">Crossing</span>
@@ -420,7 +438,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Elustondo</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/6_Elustondo_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Elustondo</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip-none">No significant strengths</span>
         </div>
@@ -436,7 +454,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Giannoulis</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2016/06/13_Giannoulis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Giannoulis</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Key passes</span>
           <span class="chip good">Crossing</span>
@@ -453,7 +471,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Baba</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2021/01/21_Baba_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Baba</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
           <span class="chip good">Tackling</span>
@@ -469,7 +487,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Kenny</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/3_Kenny_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Kenny</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
           <span class="chip good">Holding on to the ball</span>
@@ -487,7 +505,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Diego Costa</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Diego-Costa_Profile_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Diego Costa</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Passing</span>
@@ -502,7 +520,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Bataoulas</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/97_Bataoulas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Bataoulas</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Aerial prowess</span>
         </div>
@@ -523,7 +541,7 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <h3>Santamaria</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/7_Santamaria_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Santamaria</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Aerial duels</span>
           <span class="chip good">Blocking the ball</span>
@@ -541,7 +559,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Meite</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/8_Meite_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Meite</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip-none">No significant strengths</span>
         </div>
@@ -557,7 +575,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Zafeiris</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/20_Zafeiris_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Zafeiris</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Passing economy</span>
           <span class="chip good">Ball retention</span>
@@ -572,7 +590,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Ugresic</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/16_Ugresic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Ugresic</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Off-the-ball movement</span>
           <span class="chip good">Finishing</span>
@@ -586,7 +604,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Camara</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/2_Camara_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Camara</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Through balls</span>
@@ -601,7 +619,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Louchet</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/07/23_Louchet_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Louchet</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Direct free-kicks</span>
@@ -619,7 +637,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Taylor</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/32_Taylor_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Taylor</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Holding on to the ball</span>
           <span class="chip good"><span class="tier">Very Strong</span> Passing</span>
@@ -635,7 +653,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Jakic</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/18_Jakic_Roster_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Jakic</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip-none">No significant strengths</span>
         </div>
@@ -655,7 +673,7 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <h3>Pelkas</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/10_Pelkas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Pelkas</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Finishing</span>
           <span class="chip good">Long shots</span>
@@ -675,7 +693,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Shoretire</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/47_Shoretire_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Shoretire</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Defensive contribution</span>
         </div>
@@ -690,7 +708,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Ali</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/22_Ali_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Ali</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Dribbling &amp; 1v1</span>
           <span class="chip good">Chance creation</span>
@@ -708,7 +726,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Taison</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/11_Taison_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Taison</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Finishing</span>
           <span class="chip good">Through balls</span>
@@ -722,7 +740,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Zivkovic</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/14_Zivkovic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Zivkovic</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Passing</span>
           <span class="chip good">Through balls</span>
@@ -743,7 +761,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Despodov</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/77_Despodov_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Despodov</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Key passes / crossing</span>
           <span class="chip good">Dribbling</span>
@@ -758,7 +776,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Chatsidis</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/52_Chatsidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Chatsidis</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Work rate / pressing</span>
         </div>
@@ -778,7 +796,7 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <h3>Ndiaye</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/27_Ndiaye_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Ndiaye</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good">Finishing</span>
         </div>
@@ -794,7 +812,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Mythou</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/56_Mythou_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Mythou</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Very Strong</span> Finishing</span>
           <span class="chip good">Attacking positioning</span>
@@ -809,7 +827,7 @@
       </div>
 
       <div class="p-card">
-        <h3>Banza</h3>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Simon_Banza_Profile_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Banza</h3></div>
         <div class="p-row"><span class="p-row-label">Strengths</span>
           <span class="chip good"><span class="tier">Strong</span> Finishing</span>
           <span class="chip good"><span class="tier">Strong</span> Headed attempts</span>
