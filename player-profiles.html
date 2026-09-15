@@ -226,6 +226,13 @@
     border: 1px solid var(--line);
   }
 
+  .p-name {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
   .p-card h3 {
     font-family: "Archivo", sans-serif;
     font-size: 17px;
@@ -233,12 +240,19 @@
     margin: 0;
   }
 
+  .p-pos {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
   .p-row {
     display: flex;
-    flex-wrap: wrap;
     align-items: baseline;
-    gap: 6px;
-    margin-bottom: 8px;
+    gap: 4px 10px;
+    margin-bottom: 10px;
   }
 
   .p-row-label {
@@ -249,6 +263,16 @@
     color: var(--ink-dim);
     flex: none;
     width: 78px;
+    padding-top: 4px;
+    align-self: flex-start;
+  }
+
+  .p-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
   }
 
   .chip {
@@ -370,32 +394,35 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/99_Tsiftsis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Tsiftsis</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/1_Pavlenka_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Pavlenka</h3><span class="p-pos">Goalkeeper</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good">Concentration</span>
+          <span class="chip good">Penalty saving</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip-none">No significant weaknesses</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes to punch the ball clear</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/99_Tsiftsis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Tsiftsis</h3><span class="p-pos">Goalkeeper</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Defensive blocks &amp; reflexes</span>
           <span class="chip good">Aerial claiming / concentration</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Long-ball accuracy</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to play short passes out of the back</li>
           <li>Active clearing inside the box</li>
           <li>Disciplined positioning, rarely fouls</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/1_Pavlenka_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Pavlenka</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Concentration</span>
-          <span class="chip good">Penalty saving</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip-none">No significant weaknesses</span>
-        </div>
-        <ul class="p-style">
-          <li>Likes to punch the ball clear</li>
         </ul>
       </div>
 
@@ -407,129 +434,138 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/5_Michailidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Michailidis</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/3_Kenny_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Kenny</h3><span class="p-pos">Right-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
+          <span class="chip good">Holding on to the ball</span>
+          <span class="chip good">Passing</span>
+          <span class="chip good">Tackling</span>
+          <span class="chip good">Blocking the ball</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Finishing</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes to shoot from distance</li>
+          <li>Likes to play long balls</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/5_Michailidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Michailidis</h3><span class="p-pos">Centre-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Passing / distribution</span>
           <span class="chip good">Interceptions / aerial duels</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Discipline</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to play long crossfield balls to switch play</li>
           <li>Prefers positional containment over diving into tackles</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/4_Hatzidiakos_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Chatzidiakos</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good"><span class="tier">Very Strong</span> Key passes</span>
-          <span class="chip good">Crossing</span>
-          <span class="chip good">Passing</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Aerial duels</span>
-        </div>
-        <ul class="p-style">
-          <li>Plays the ball off the ground often</li>
-          <li>Likes to play long balls</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/6_Elustondo_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Elustondo</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip-none">No significant strengths</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Aerial duels</span>
-          <span class="chip bad">Discipline</span>
-          <span class="chip bad">Tackling</span>
-        </div>
-        <ul class="p-style">
-          <li>Does not dive into tackles</li>
-          <li>Clears the ball out of defence often</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2016/06/13_Giannoulis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Giannoulis</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Key passes</span>
-          <span class="chip good">Crossing</span>
-          <span class="chip good">Ball interception</span>
-          <span class="chip good">Concentration</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Aerial duels</span>
-        </div>
-        <ul class="p-style">
-          <li>Likes to dribble</li>
-          <li>Does not dive into tackles</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2021/01/21_Baba_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Baba</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2021/01/21_Baba_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Baba</h3><span class="p-pos">Left-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
           <span class="chip good">Tackling</span>
           <span class="chip good">Concentration</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip-none">No significant weaknesses</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to shoot from distance</li>
           <li>Likes to tackle</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/3_Kenny_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Kenny</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
-          <span class="chip good">Holding on to the ball</span>
-          <span class="chip good">Passing</span>
-          <span class="chip good">Tackling</span>
-          <span class="chip good">Blocking the ball</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/6_Elustondo_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Elustondo</h3><span class="p-pos">Centre-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip-none">No significant strengths</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Finishing</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Aerial duels</span>
+          <span class="chip bad">Discipline</span>
+          <span class="chip bad">Tackling</span>
+          </div>
         </div>
         <ul class="p-style">
-          <li>Likes to shoot from distance</li>
-          <li>Likes to play long balls</li>
+          <li>Does not dive into tackles</li>
+          <li>Clears the ball out of defence often</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Diego-Costa_Profile_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Diego Costa</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Diego-Costa_Profile_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Diego Costa</h3><span class="p-pos">Centre-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Passing</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip-none">No significant weaknesses</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Indirect set-piece threat</li>
           <li>Clears the ball out of defence often</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/97_Bataoulas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Bataoulas</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Aerial prowess</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2016/06/13_Giannoulis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Giannoulis</h3><span class="p-pos">Left-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good">Key passes</span>
+          <span class="chip good">Crossing</span>
+          <span class="chip good">Ball interception</span>
+          <span class="chip good">Concentration</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Aerial duels</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes to dribble</li>
+          <li>Does not dive into tackles</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/97_Bataoulas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Bataoulas</h3><span class="p-pos">Defender</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good">Aerial prowess</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Experience / overcommitment</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Dominant box defender, clears danger early</li>
           <li>Comfortable playing out from deep with either foot</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/4_Hatzidiakos_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Chatzidiakos</h3><span class="p-pos">Centre-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good"><span class="tier">Very Strong</span> Key passes</span>
+          <span class="chip good">Crossing</span>
+          <span class="chip good">Passing</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Aerial duels</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Plays the ball off the ground often</li>
+          <li>Likes to play long balls</li>
         </ul>
       </div>
 
@@ -541,13 +577,48 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/7_Santamaria_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Santamaria</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/20_Zafeiris_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Zafeiris</h3><span class="p-pos">Central midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good"><span class="tier">Very Strong</span> Passing economy</span>
+          <span class="chip good">Ball retention</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Aerial duels</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes short, quick combination triangles</li>
+          <li>Looks to slide progressive balls into attacking pockets</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/32_Taylor_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Taylor</h3><span class="p-pos">Left-back</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good"><span class="tier">Very Strong</span> Holding on to the ball</span>
+          <span class="chip good"><span class="tier">Very Strong</span> Passing</span>
+          <span class="chip good">Key passes</span>
+          <span class="chip good">Concentration</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Crossing</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes to play short passes</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/7_Santamaria_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Santamaria</h3><span class="p-pos">Defensive midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Aerial duels</span>
           <span class="chip good">Blocking the ball</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Concentration</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Plays the ball off the ground often</li>
@@ -557,111 +628,85 @@
           <li>Does not dive into tackles</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/8_Meite_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Meite</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip-none">No significant strengths</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip-none">No significant weaknesses</span>
-        </div>
-        <ul class="p-style">
-          <li>Gets fouled often</li>
-          <li>Indirect set-piece threat</li>
-          <li>Likes to dribble</li>
-          <li>Likes to shoot from distance</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/20_Zafeiris_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Zafeiris</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good"><span class="tier">Very Strong</span> Passing economy</span>
-          <span class="chip good">Ball retention</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Aerial duels</span>
-        </div>
-        <ul class="p-style">
-          <li>Likes short, quick combination triangles</li>
-          <li>Looks to slide progressive balls into attacking pockets</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/16_Ugresic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Ugresic</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/16_Ugresic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Ugresic</h3><span class="p-pos">Central midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Off-the-ball movement</span>
           <span class="chip good">Finishing</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Defensive contribution</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to arrive late in the box to convert crosses</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/2_Camara_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Camara</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/07/23_Louchet_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Louchet</h3><span class="p-pos">Central midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good">Aerial duels</span>
+          <span class="chip good">Direct free-kicks</span>
+          <span class="chip good">Finishing</span>
+          <span class="chip good">Tackling</span>
+          <span class="chip good">Blocking the ball</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Discipline</span>
+          <span class="chip bad">Defensive contribution</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes to shoot from distance</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/2_Camara_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Camara</h3><span class="p-pos">Defensive midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Through balls</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip-none">No significant weaknesses</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to shoot from distance</li>
           <li>Commits fouls often</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/07/23_Louchet_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Louchet</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Aerial duels</span>
-          <span class="chip good">Direct free-kicks</span>
-          <span class="chip good">Finishing</span>
-          <span class="chip good">Tackling</span>
-          <span class="chip good">Blocking the ball</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Discipline</span>
-          <span class="chip bad">Defensive contribution</span>
-        </div>
-        <ul class="p-style">
-          <li>Likes to shoot from distance</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/32_Taylor_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Taylor</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good"><span class="tier">Very Strong</span> Holding on to the ball</span>
-          <span class="chip good"><span class="tier">Very Strong</span> Passing</span>
-          <span class="chip good">Key passes</span>
-          <span class="chip good">Concentration</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Crossing</span>
-        </div>
-        <ul class="p-style">
-          <li>Likes to play short passes</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/18_Jakic_Roster_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Jakic</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/18_Jakic_Roster_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Jakic</h3><span class="p-pos">Defensive midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip-none">No significant strengths</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Concentration</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to play long balls</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/8_Meite_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Meite</h3><span class="p-pos">Defensive midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip-none">No significant strengths</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip-none">No significant weaknesses</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Gets fouled often</li>
+          <li>Indirect set-piece threat</li>
+          <li>Likes to dribble</li>
+          <li>Likes to shoot from distance</li>
         </ul>
       </div>
 
@@ -673,16 +718,40 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/10_Pelkas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Pelkas</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/14_Zivkovic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Zivkovic</h3><span class="p-pos">Right winger</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good">Passing</span>
+          <span class="chip good">Through balls</span>
+          <span class="chip good">Key passes</span>
+          <span class="chip good">Dribbling</span>
+          <span class="chip good">Holding on to the ball</span>
+          <span class="chip good">Defensive contribution</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Aerial duels</span>
+          <span class="chip bad">Finishing</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Likes to do layoffs</li>
+          <li>Likes to play short passes</li>
+          <li>Likes to dribble</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/10_Pelkas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Pelkas</h3><span class="p-pos">Attacking midfielder</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Finishing</span>
           <span class="chip good">Long shots</span>
           <span class="chip good">Holding on to the ball</span>
           <span class="chip good">Defensive contribution</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Passing</span>
           <span class="chip bad">Crossing</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to cut inside</li>
@@ -691,32 +760,18 @@
           <li>Commits fouls often</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/47_Shoretire_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Shoretire</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Defensive contribution</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Aerial duels</span>
-          <span class="chip bad">Crossing</span>
-        </div>
-        <ul class="p-style">
-          <li>Gets fouled often</li>
-          <li>Commits fouls often</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/22_Ali_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Ali</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/22_Ali_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Ali</h3><span class="p-pos">Winger</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Dribbling &amp; 1v1</span>
           <span class="chip good">Chance creation</span>
           <span class="chip good">Pace &amp; agility</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Aerial duels</span>
           <span class="chip bad">Defensive contribution</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to cut inside (inverted winger)</li>
@@ -724,67 +779,65 @@
           <li>High-volume dribbler, seeks direct duels</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/11_Taison_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Taison</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/52_Chatsidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Chatsidis</h3><span class="p-pos">Winger</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
+          <span class="chip good">Work rate / pressing</span>
+          </div>
+        </div>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
+          <span class="chip bad">Decision making</span>
+          </div>
+        </div>
+        <ul class="p-style">
+          <li>Tries to stretch opposing lines with quick vertical runs wide</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/11_Taison_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Taison</h3><span class="p-pos">Left winger</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Finishing</span>
           <span class="chip good">Through balls</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip-none">No significant weaknesses</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to do layoffs</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/14_Zivkovic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Zivkovic</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Passing</span>
-          <span class="chip good">Through balls</span>
-          <span class="chip good">Key passes</span>
-          <span class="chip good">Dribbling</span>
-          <span class="chip good">Holding on to the ball</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/47_Shoretire_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Shoretire</h3><span class="p-pos">Winger</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Defensive contribution</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Aerial duels</span>
-          <span class="chip bad">Finishing</span>
+          <span class="chip bad">Crossing</span>
+          </div>
         </div>
         <ul class="p-style">
-          <li>Likes to do layoffs</li>
-          <li>Likes to play short passes</li>
-          <li>Likes to dribble</li>
+          <li>Gets fouled often</li>
+          <li>Commits fouls often</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/77_Despodov_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Despodov</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/77_Despodov_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Despodov</h3><span class="p-pos">Right winger</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Key passes / crossing</span>
           <span class="chip good">Dribbling</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Defensive work rate</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Likes to cut inside onto his stronger foot to shoot</li>
           <li>Delivers dangerous set-pieces</li>
-        </ul>
-      </div>
-
-      <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/52_Chatsidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Chatsidis</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
-          <span class="chip good">Work rate / pressing</span>
-        </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
-          <span class="chip bad">Decision making</span>
-        </div>
-        <ul class="p-style">
-          <li>Tries to stretch opposing lines with quick vertical runs wide</li>
         </ul>
       </div>
 
@@ -796,13 +849,15 @@
     <div class="card-grid">
 
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/27_Ndiaye_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Ndiaye</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/27_Ndiaye_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Ndiaye</h3><span class="p-pos">Centre-forward</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Finishing</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad"><span class="tier">Very Weak</span> Discipline</span>
           <span class="chip bad">Aerial duels</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Gets fouled often</li>
@@ -810,30 +865,32 @@
           <li>Commits fouls often</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/56_Mythou_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Mythou</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/56_Mythou_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Mythou</h3><span class="p-pos">Centre-forward</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Finishing</span>
           <span class="chip good">Attacking positioning</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad">Hold-up play</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Plays on the shoulder of the last defender</li>
           <li>Extremely direct, shoots quickly once in the box</li>
         </ul>
       </div>
-
       <div class="p-card">
-        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Simon_Banza_Profile_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><h3>Banza</h3></div>
-        <div class="p-row"><span class="p-row-label">Strengths</span>
+        <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Simon_Banza_Profile_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Banza</h3><span class="p-pos">Centre-forward</span></div></div>
+        <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Strong</span> Finishing</span>
           <span class="chip good"><span class="tier">Strong</span> Headed attempts</span>
+          </div>
         </div>
-        <div class="p-row"><span class="p-row-label">Weaknesses</span>
+        <div class="p-row"><span class="p-row-label">Weaknesses</span><div class="p-chips">
           <span class="chip bad"><span class="tier">Weak</span> Passing</span>
+          </div>
         </div>
         <ul class="p-style">
           <li>Indirect set-piece threat</li>
