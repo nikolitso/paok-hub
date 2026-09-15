@@ -94,9 +94,12 @@
 
   .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
 
-  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 900px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 760px; table-layout: fixed; }
 
-  th, td { text-align: left; padding: 9px 12px; white-space: nowrap; }
+  th, td { text-align: left; padding: 8px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  th:first-child, td:first-child { width: 17%; white-space: normal; }
+  th:not(:first-child), td:not(:first-child) { width: 6.4%; }
 
   thead th {
     font-family: "IBM Plex Mono", monospace;
@@ -228,7 +231,7 @@
   </section>
 
   <footer class="page-foot">
-    <span>Penalties are penalties won (awarded), from per-match Opta data. "Foreign referees" individual breakdown omitted &mdash; most officiated only 1&ndash;2 matches each.</span>
+    <span>Penalties are penalties won (awarded), from per-match source data. "Foreign referees" individual breakdown omitted &mdash; most officiated only 1&ndash;2 matches each.</span>
   </footer>
 
 </div>
