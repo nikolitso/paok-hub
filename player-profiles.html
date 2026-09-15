@@ -71,6 +71,40 @@
     padding: 56px 24px 96px;
   }
 
+  .jump-nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 -24px 32px;
+    padding: 12px 24px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .jump-nav a {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-dim);
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .jump-nav a:hover, .jump-nav a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    outline: none;
+  }
+
   header.page-head {
     margin-bottom: 40px;
   }
@@ -119,12 +153,13 @@
   }
 
   .pos-group {
-    margin-top: 40px;
+    margin-top: 44px;
+    scroll-margin-top: 64px;
   }
 
   .pos-label {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 8px;
     font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
@@ -132,7 +167,7 @@
     text-transform: uppercase;
     color: var(--ink-dim);
     font-weight: 600;
-    margin: 0 0 14px;
+    margin: 0 0 16px;
     border-bottom: 2px solid var(--ink);
     padding-bottom: 10px;
   }
@@ -145,24 +180,39 @@
     display: inline-block;
   }
 
+  .pos-label .count {
+    margin-left: auto;
+    font-weight: 500;
+    color: var(--ink-dim);
+    opacity: 0.7;
+  }
+
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 16px;
   }
 
   .p-card {
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-left: 3px solid var(--accent-soft);
+    border-radius: 12px;
     background: var(--surface);
-    padding: 16px 18px;
+    padding: 18px 20px;
+    transition: border-left-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .p-card:hover {
+    border-left-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
   }
 
   .p-card h3 {
     font-family: "Archivo", sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
-    margin: 0 0 10px;
+    margin: 0 0 12px;
   }
 
   .p-row {
@@ -170,7 +220,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .p-row-label {
@@ -187,8 +237,9 @@
     display: inline-flex;
     align-items: baseline;
     gap: 4px;
-    font-size: 12px;
-    padding: 3px 9px;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 4px 10px;
     border-radius: 999px;
     line-height: 1.4;
     white-space: nowrap;
@@ -203,23 +254,29 @@
   }
 
   .chip-none {
-    font-size: 12px;
+    display: inline-flex;
+    font-size: 11.5px;
     color: var(--ink-dim);
-    font-style: italic;
+    opacity: 0.6;
+    padding: 4px 10px;
+    border: 1px dashed var(--line);
+    border-radius: 999px;
   }
 
   .p-style {
-    margin: 8px 0 0;
-    padding: 0;
+    margin: 10px 0 0;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
     list-style: none;
     font-size: 12.5px;
     color: var(--ink-dim);
+    line-height: 1.6;
   }
 
   .p-style li {
-    padding-left: 12px;
+    padding-left: 14px;
     position: relative;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
 
   .p-style li::before {
@@ -238,6 +295,11 @@
   }
 
   .legend .chip { pointer-events: none; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .p-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+  }
+  :root[data-theme="dark"] .p-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
 
   footer.page-foot {
     margin-top: 48px;
@@ -266,8 +328,16 @@
     </div>
   </header>
 
-  <div class="pos-group">
-    <p class="pos-label"><span class="dot"></span>Goalkeepers</p>
+  <nav class="jump-nav">
+    <a href="#goalkeepers">Goalkeepers</a>
+    <a href="#defenders">Defenders</a>
+    <a href="#midfielders">Midfielders</a>
+    <a href="#attacking-midfielders">Attacking midfielders</a>
+    <a href="#forwards">Forwards</a>
+  </nav>
+
+  <div class="pos-group" id="goalkeepers">
+    <p class="pos-label"><span class="dot"></span>Goalkeepers<span class="count">2 players</span></p>
     <div class="card-grid">
 
       <div class="p-card">
@@ -303,8 +373,8 @@
     </div>
   </div>
 
-  <div class="pos-group">
-    <p class="pos-label"><span class="dot"></span>Defenders</p>
+  <div class="pos-group" id="defenders">
+    <p class="pos-label"><span class="dot"></span>Defenders<span class="count">8 players</span></p>
     <div class="card-grid">
 
       <div class="p-card">
@@ -437,8 +507,8 @@
     </div>
   </div>
 
-  <div class="pos-group">
-    <p class="pos-label"><span class="dot"></span>Midfielders</p>
+  <div class="pos-group" id="midfielders">
+    <p class="pos-label"><span class="dot"></span>Midfielders<span class="count">9 players</span></p>
     <div class="card-grid">
 
       <div class="p-card">
@@ -584,8 +654,8 @@
     </div>
   </div>
 
-  <div class="pos-group">
-    <p class="pos-label"><span class="dot"></span>Attacking midfielders</p>
+  <div class="pos-group" id="attacking-midfielders">
+    <p class="pos-label"><span class="dot"></span>Attacking midfielders<span class="count">7 players</span></p>
     <div class="card-grid">
 
       <div class="p-card">
@@ -707,8 +777,8 @@
     </div>
   </div>
 
-  <div class="pos-group">
-    <p class="pos-label"><span class="dot"></span>Forwards</p>
+  <div class="pos-group" id="forwards">
+    <p class="pos-label"><span class="dot"></span>Forwards<span class="count">3 players</span></p>
     <div class="card-grid">
 
       <div class="p-card">
