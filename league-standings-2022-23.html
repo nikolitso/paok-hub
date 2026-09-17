@@ -87,6 +87,14 @@
   section.group { margin-top: 40px; }
 
   .section-title { font-family: "Archivo", sans-serif; font-size: 19px; font-weight: 800; margin: 0 0 14px; }
+  .section-title.has-note { margin-bottom: 4px; }
+
+  .paok-note {
+    font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600;
+    color: var(--accent); background: var(--accent-soft);
+    display: inline-block; padding: 5px 12px; border-radius: 999px;
+    margin: 0 0 14px;
+  }
 
   .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 
@@ -154,7 +162,8 @@
   </header>
 
   <section class="group">
-    <p class="section-title">Championship Round</p>
+    <p class="section-title has-note">Championship Round</p>
+    <p class="paok-note">&#9917; PAOK finished 4th &mdash; 4th on xPts</p>
     <div class="table-scroll">
       <table>
         <thead><tr>
