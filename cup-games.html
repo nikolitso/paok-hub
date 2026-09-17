@@ -18,7 +18,6 @@
     --accent: #1c1f6b;
     --accent-soft: #e7e8f5;
     --good: #1a7a4c;
-    --bad: #a4402a;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -30,9 +29,7 @@
       --ink-dim: #9a9ca3;
       --line: #2b2d33;
       --accent: #8f96ff;
-      --accent-soft: #232650;
       --good: #4fce94;
-      --bad: #e8917c;
     }
   }
 
@@ -44,9 +41,7 @@
     --ink-dim: #9a9ca3;
     --line: #2b2d33;
     --accent: #8f96ff;
-    --accent-soft: #232650;
     --good: #4fce94;
-    --bad: #e8917c;
   }
 
   * { box-sizing: border-box; }
@@ -112,62 +107,8 @@
     padding: 5px 12px;
   }
 
-  .match-group {
-    margin-top: 44px;
-  }
-
-  .match-head {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 16px 18px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: var(--surface);
-    margin-bottom: 18px;
-  }
-
-  .match-head .md-badge {
-    flex: none;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 5px 11px;
-  }
-
-  .match-head .match-info { flex: 1; min-width: 0; }
-
-  .match-head .teams {
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  .match-head .match-meta {
-    margin-top: 4px;
-    font-size: 12.5px;
-    color: var(--ink-dim);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-  }
-
-  .match-head .go {
-    flex: none;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
-    color: var(--ink-dim);
-    text-decoration: none;
-  }
-  .match-head .go:hover { text-decoration: underline; color: var(--accent); }
-
   .pos-group {
-    margin-top: 18px;
+    margin-top: 30px;
   }
 
   .pos-label {
@@ -267,8 +208,8 @@
     text-transform: none;
   }
 
+  .dash { color: var(--ink-dim); }
   .g-pos { color: var(--good); font-weight: 600; }
-  .r-pos { color: var(--bad); font-weight: 600; }
 
   .group-row td {
     padding: 12px 14px 8px;
@@ -291,6 +232,14 @@
     margin-right: 8px;
   }
 
+  .note-line {
+    text-align: center;
+    color: var(--ink-dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    padding: 8px 0 0;
+  }
+
   .glossary {
     margin-top: 48px;
     padding-top: 24px;
@@ -309,7 +258,7 @@
 
   .glossary dl {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 10px 24px;
     margin: 0;
   }
@@ -334,7 +283,7 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .match-group { animation: rise 0.35s ease both; }
+    .pos-group { animation: rise 0.35s ease both; }
   }
   @keyframes rise {
     from { opacity: 0; transform: translateY(6px); }
@@ -349,150 +298,87 @@
   <header class="page-head">
     <p class="eyebrow"><a href="index.html" style="color:inherit;text-decoration:none;">PAOK Hub</a></p>
     <h1>Cup Games, 2026&ndash;27</h1>
-    <p class="sub">Individual PAOK player stats from each Greek Cup match this season.</p>
+    <p class="sub">Individual PAOK player stats from the Greek Cup 2026&ndash;27 season.</p>
     <div class="meta-row">
-      <span class="meta-pill">Greek Cup, League Stage</span>
       <span class="meta-pill">2 matches played</span>
+      <span class="meta-pill">PAOK 0&ndash;0 OFI (2 Sep)</span>
+      <span class="meta-pill">Atromitos 0&ndash;1 PAOK (16 Sep)</span>
+      <span class="meta-pill">21 of 28 roster players have played</span>
     </div>
   </header>
 
-  <div class="match-group">
-    <div class="match-head">
-      <span class="md-badge">MD1</span>
-      <span class="match-info">
-        <span class="teams">PAOK Thessaloniki FC 0&ndash;0 OFI FC</span>
-        <span class="match-meta">
-          <span>2 September 2026, 22:15</span>
-          <span>Venue: Stadio Toumbas</span>
-          <span>Referee: Fotis Polychronis</span>
-        </span>
-      </span>
-      <a class="go" href="https://optaplayerstats.statsperform.com/en_GB/soccer/cup-2026-2027/3vh605n6bsoqfy4bkbkce1st0/match/view/5ayiyjas0olx2d2uz9g2km044/match-summary" target="_blank" rel="noopener">Full report &rarr;</a>
-    </div>
-
-    <div class="pos-group">
-      <p class="pos-label"><span class="dot"></span>Goalkeepers</p>
-      <div class="table-scroll">
-        <table>
-          <thead><tr>
-            <th>Player</th><th class="num" title="Minutes played">MIN</th><th class="num" title="Goals scored">GS</th>
-            <th class="num no-caps" title="Expected goals">xG</th><th class="num" title="Assists">A</th><th class="num" title="Total shot attempts">S</th><th class="num" title="Passes">P</th><th class="num" title="Yellow cards">Y</th><th class="num" title="Red cards">R</th><th class="num" title="Shots created (assists + key passes)">SCA</th>
-          </tr></thead>
-          <tbody>
-            <tr><td class="player">A. Tsiftsis</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">15</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="pos-group">
-      <div class="table-scroll">
-        <table>
-          <thead><tr>
-            <th>Player</th><th class="num">MIN</th><th class="num">GS</th>
-            <th class="num no-caps">xG</th><th class="num">A</th><th class="num">S</th><th class="num">P</th><th class="num">Y</th><th class="num">R</th><th class="num">SCA</th>
-          </tr></thead>
-          <tbody>
-            <tr class="group-row"><td colspan="10"><span class="dot"></span>Defenders</td></tr>
-            <tr><td class="player">A. Baba</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">46</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
-            <tr><td class="player">G. Michailidis</td><td class="num">90</td><td class="num">0</td><td class="num">0.04</td><td class="num">0</td><td class="num">2</td><td class="num">52</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">D. Bataoulas</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">52</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
-            <tr><td class="player">J. Kenny</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">49</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
-
-            <tr class="group-row"><td colspan="10"><span class="dot"></span>Midfielders</td></tr>
-            <tr><td class="player">G. Taylor</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">61</td><td class="num">0</td><td class="num r-pos">1</td><td class="num">1</td></tr>
-            <tr><td class="player">B. Santamar&iacute;a</td><td class="num">38</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">9</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">Taison</td><td class="num">68</td><td class="num">0</td><td class="num">0.37</td><td class="num">0</td><td class="num">3</td><td class="num">36</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">O. Ugre&scaron;i&#263;</td><td class="num">85</td><td class="num">0</td><td class="num">0.41</td><td class="num">0</td><td class="num">4</td><td class="num">27</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
-            <tr><td class="player">A. &#381;ivkovi&#263;</td><td class="num">69</td><td class="num">0</td><td class="num">0.10</td><td class="num">0</td><td class="num">1</td><td class="num">33</td><td class="num">0</td><td class="num">0</td><td class="num">3</td></tr>
-            <tr><td class="player">T. Ali</td><td class="num">5</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">M. Camara</td><td class="num">5</td><td class="num">0</td><td class="num">0.03</td><td class="num">0</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">D. Chatsidis</td><td class="num">21</td><td class="num">0</td><td class="num">0.09</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">S. Shoretire</td><td class="num">52</td><td class="num">0</td><td class="num">0.12</td><td class="num">0</td><td class="num">2</td><td class="num">16</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-
-            <tr class="group-row"><td colspan="10"><span class="dot"></span>Forwards</td></tr>
-            <tr><td class="player">A. Mythou</td><td class="num">85</td><td class="num">0</td><td class="num">0.33</td><td class="num">0</td><td class="num">3</td><td class="num">13</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">C. Ndiaye</td><td class="num">22</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Goalkeepers</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th class="num" title="Matches played">MP</th><th class="num" title="Minutes played">MIN</th><th class="num" title="Passes">P</th><th class="num" title="Goals conceded">GC</th><th class="num" title="Goalkeeper saves">S</th><th class="num" title="Yellow cards">Y</th><th class="num" title="Red cards">R</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="player">Tsiftsis</td><td class="num">2</td><td class="num">180</td><td class="num">58</td><td class="num">0</td><td class="num">6</td><td class="num">1</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="match-group">
-    <div class="match-head">
-      <span class="md-badge">MD3</span>
-      <span class="match-info">
-        <span class="teams">Atromitos 0&ndash;1 PAOK Thessaloniki FC</span>
-        <span class="match-meta">
-          <span>16 September 2026, 20:00</span>
-          <span>Venue: Dimotiko Stadio Peristeriou</span>
-          <span>Referee: Konstantinos Tsetsilas</span>
-        </span>
-      </span>
-      <a class="go" href="https://optaplayerstats.statsperform.com/en_GB/soccer/cup-2026-2027/3vh605n6bsoqfy4bkbkce1st0/match/view/5f2uy6ehjfostqvzgvb3bhjx0/match-summary" target="_blank" rel="noopener">Full report &rarr;</a>
-    </div>
+  <div class="pos-group">
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th class="num" title="Matches played">MP</th><th class="num" title="Minutes played">MIN</th><th class="num" title="Goals scored">GS</th>
+          <th class="num no-caps" title="Expected goals">xG</th><th class="num" title="Assists">A</th><th class="num" title="Total shot attempts">S</th><th class="num" title="Shots on target">SoT</th><th class="num" title="Passes">P</th><th class="num" title="Yellow cards">Y</th><th class="num" title="Red cards">R</th><th class="num" title="Fouls won">FW</th><th class="num" title="Fouls conceded">FC</th><th class="num" title="Offsides">O</th><th class="num" title="Shots created (assists + key passes)">SCA</th>
+        </tr></thead>
+        <tbody>
+          <tr class="group-row"><td colspan="14"><span class="dot"></span>Defenders</td></tr>
+          <tr><td class="player">Elustondo</td><td class="num">1</td><td class="num">65</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">50</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td class="player">Kenny</td><td class="num">2</td><td class="num">180</td><td class="num">0</td><td class="num">0.00</td><td class="num g-pos">1</td><td class="num">0</td><td class="num">0</td><td class="num">97</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td class="num">2</td><td class="num">0</td><td class="num">6</td></tr>
+          <tr><td class="player">Michailidis</td><td class="num">1</td><td class="num">90</td><td class="num">0</td><td class="num">0.04</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">65</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td class="player">Baba</td><td class="num">1</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">55</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">2</td></tr>
+          <tr><td class="player">Bataoulas</td><td class="num">2</td><td class="num">114</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">61</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
+          <tr><td class="player">Diego Costa</td><td class="num">1</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">50</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
 
-    <div class="pos-group">
-      <p class="pos-label"><span class="dot"></span>Goalkeepers</p>
-      <div class="table-scroll">
-        <table>
-          <thead><tr>
-            <th>Player</th><th class="num">MIN</th><th class="num">GS</th>
-            <th class="num no-caps">xG</th><th class="num">A</th><th class="num">S</th><th class="num">P</th><th class="num">Y</th><th class="num">R</th><th class="num">SCA</th>
-          </tr></thead>
-          <tbody>
-            <tr><td class="player">A. Tsiftsis</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">21</td><td class="num g-pos">1</td><td class="num">0</td><td class="num">0</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          <tr class="group-row"><td colspan="14"><span class="dot"></span>Midfielders</td></tr>
+          <tr><td class="player">Santamaria</td><td class="num">2</td><td class="num">42</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td class="player">Taylor</td><td class="num">2</td><td class="num">180</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">116</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">5</td><td class="num">0</td><td class="num">1</td></tr>
+          <tr><td class="player">Zafeiris</td><td class="num">1</td><td class="num">32</td><td class="num">0</td><td class="num">0.07</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">14</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td class="player">Camara</td><td class="num">2</td><td class="num">70</td><td class="num">0</td><td class="num">0.39</td><td class="num">0</td><td class="num">3</td><td class="num">1</td><td class="num">49</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">1</td></tr>
+          <tr><td class="player">Jakic</td><td class="num">1</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">41</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
+          <tr><td class="player">Ugresic</td><td class="num">2</td><td class="num">143</td><td class="num">0</td><td class="num">0.41</td><td class="num">0</td><td class="num">4</td><td class="num">1</td><td class="num">50</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">2</td></tr>
 
-    <div class="pos-group">
-      <div class="table-scroll">
-        <table>
-          <thead><tr>
-            <th>Player</th><th class="num">MIN</th><th class="num">GS</th>
-            <th class="num no-caps">xG</th><th class="num">A</th><th class="num">S</th><th class="num">P</th><th class="num">Y</th><th class="num">R</th><th class="num">SCA</th>
-          </tr></thead>
-          <tbody>
-            <tr class="group-row"><td colspan="10"><span class="dot"></span>Defenders</td></tr>
-            <tr><td class="player">Diego Costa</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">44</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">Aritz Elustondo</td><td class="num">65</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">41</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">J. Kenny</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num g-pos">1</td><td class="num">0</td><td class="num">28</td><td class="num">0</td><td class="num">0</td><td class="num">4</td></tr>
-            <tr><td class="player">D. Bataoulas</td><td class="num">24</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr class="group-row"><td colspan="14"><span class="dot"></span>Attacking midfielders</td></tr>
+          <tr><td class="player">Zivkovic</td><td class="num">1</td><td class="num">69</td><td class="num">0</td><td class="num">0.10</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">39</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">3</td></tr>
+          <tr><td class="player">Pelkas</td><td class="num">1</td><td class="num">25</td><td class="num">0</td><td class="num">0.03</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">9</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">1</td></tr>
+          <tr><td class="player">Shoretire</td><td class="num">1</td><td class="num">52</td><td class="num">0</td><td class="num">0.12</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">25</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td class="player">Chatsidis</td><td class="num">2</td><td class="num">111</td><td class="num">0</td><td class="num">0.09</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">22</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">1</td></tr>
+          <tr><td class="player">Taison</td><td class="num">1</td><td class="num">68</td><td class="num">0</td><td class="num">0.37</td><td class="num">0</td><td class="num">3</td><td class="num">0</td><td class="num">40</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td class="player">Ali</td><td class="num">2</td><td class="num">91</td><td class="num">0</td><td class="num">0.07</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">22</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
 
-            <tr class="group-row"><td colspan="10"><span class="dot"></span>Midfielders</td></tr>
-            <tr><td class="player">G. Taylor</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">34</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">K. Jaki&#263;</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">35</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
-            <tr><td class="player">O. Ugre&scaron;i&#263;</td><td class="num">58</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">17</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">T. Ali</td><td class="num">86</td><td class="num">0</td><td class="num">0.07</td><td class="num">0</td><td class="num">2</td><td class="num">15</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">M. Camara</td><td class="num">65</td><td class="num">0</td><td class="num">0.37</td><td class="num">0</td><td class="num">2</td><td class="num">37</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
-            <tr><td class="player">D. Chatsidis</td><td class="num">90</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">19</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
-            <tr><td class="player">B. Santamar&iacute;a</td><td class="num">4</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">C. Zafeiris</td><td class="num">32</td><td class="num">0</td><td class="num">0.07</td><td class="num">0</td><td class="num">2</td><td class="num">14</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">D. Pelkas</td><td class="num">25</td><td class="num">0</td><td class="num">0.03</td><td class="num">0</td><td class="num">2</td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
-
-            <tr class="group-row"><td colspan="10"><span class="dot"></span>Forwards</td></tr>
-            <tr><td class="player">A. Mythou</td><td class="num">66</td><td class="num g-pos">1</td><td class="num">0.26</td><td class="num">0</td><td class="num">2</td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-            <tr><td class="player">C. Ndiaye</td><td class="num">25</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-          </tbody>
-        </table>
-      </div>
+          <tr class="group-row"><td colspan="14"><span class="dot"></span>Forwards</td></tr>
+          <tr><td class="player">Mythou</td><td class="num">2</td><td class="num">151</td><td class="num g-pos">1</td><td class="num">0.59</td><td class="num">0</td><td class="num">5</td><td class="num">3</td><td class="num">30</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td class="num">5</td><td class="num">1</td><td class="num">0</td></tr>
+          <tr><td class="player">Ndiaye</td><td class="num">2</td><td class="num">47</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <section class="glossary">
     <h2>Glossary</h2>
     <dl>
+      <div><dt>MP</dt><dd>Matches played</dd></div>
       <div><dt>MIN</dt><dd>Minutes played</dd></div>
       <div><dt>GS</dt><dd>Goals scored</dd></div>
       <div><dt>xG</dt><dd>Expected goals</dd></div>
       <div><dt>A</dt><dd>Assists</dd></div>
       <div><dt>S</dt><dd>Total shot attempts</dd></div>
+      <div><dt>SoT</dt><dd>Shots on target</dd></div>
       <div><dt>P</dt><dd>Passes</dd></div>
       <div><dt>Y</dt><dd>Yellow cards</dd></div>
       <div><dt>R</dt><dd>Red cards</dd></div>
+      <div><dt>FW</dt><dd>Fouls won</dd></div>
+      <div><dt>FC</dt><dd>Fouls conceded</dd></div>
+      <div><dt>O</dt><dd>Offsides</dd></div>
+      <div><dt>GC</dt><dd>Goals conceded (goalkeepers)</dd></div>
+      <div><dt>S</dt><dd>Goalkeeper saves</dd></div>
       <div><dt>SCA</dt><dd>Shots created (assists + key passes)</dd></div>
     </dl>
   </section>
