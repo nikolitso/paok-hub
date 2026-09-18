@@ -210,6 +210,16 @@
   .dash { color: var(--ink-dim); }
   .g-pos { color: var(--good); font-weight: 600; }
 
+  .repeat-head th {
+    text-align: left; padding: 11px 14px; white-space: nowrap;
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim);
+    font-weight: 600; background: var(--surface-2); border-bottom: 1px solid var(--line);
+  }
+  .repeat-head th.num { text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; }
+  .repeat-head th.no-caps { text-transform: none; }
+  .repeat-head th:first-child { position: sticky; left: 0; z-index: 2; background: var(--surface-2); }
+
   .group-row td {
     padding: 12px 14px 8px;
     border-bottom: none;
@@ -349,6 +359,7 @@
           <tr><td class="player">Bataoulas</td><td class="num">1</td><td class="num">72</td><td class="num">0</td><td class="num">0.15</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">16</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr>
           <tr><td class="player">Diego Costa</td><td class="num">1</td><td class="num">90</td><td class="num">0</td><td class="num">0.05</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">45</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">1</td></tr>
 
+          <tr class="repeat-head"><th>Player</th><th class="num" title="Matches played">MP</th><th class="num" title="Minutes played">MIN</th><th class="num" title="Goals scored">GS</th><th class="num no-caps" title="Expected goals">xG</th><th class="num" title="Assists">A</th><th class="num" title="Total shot attempts">S</th><th class="num" title="Shots on target">SoT</th><th class="num" title="Passes">P</th><th class="num" title="Yellow cards">Y</th><th class="num" title="Red cards">R</th><th class="num" title="Fouls won">FW</th><th class="num" title="Fouls conceded">FC</th><th class="num" title="Offsides">O</th><th class="num" title="Shots created (assists + key passes)">SCA</th></tr>
           <tr class="group-row"><td colspan="14"><span class="dot"></span>Midfielders</td></tr>
           <tr><td class="player">Santamaria</td><td class="num">3</td><td class="num">113</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">43</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr>
           <tr><td class="player">Taylor</td><td class="num">2</td><td class="num">125</td><td class="num">0</td><td class="num">0.00</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">64</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td class="num">7</td><td class="num">0</td><td class="num">2</td></tr>
@@ -359,6 +370,7 @@
           <tr><td class="player">Ugresic</td><td class="num">2</td><td class="num">105</td><td class="num g-pos" title="1 left-foot">1</td><td class="num">0.75</td><td class="num">0</td><td class="num">2</td><td class="num">2</td><td class="num">37</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
           <!-- Meite: 0 MP, hidden until he plays -->
 
+          <tr class="repeat-head"><th>Player</th><th class="num" title="Matches played">MP</th><th class="num" title="Minutes played">MIN</th><th class="num" title="Goals scored">GS</th><th class="num no-caps" title="Expected goals">xG</th><th class="num" title="Assists">A</th><th class="num" title="Total shot attempts">S</th><th class="num" title="Shots on target">SoT</th><th class="num" title="Passes">P</th><th class="num" title="Yellow cards">Y</th><th class="num" title="Red cards">R</th><th class="num" title="Fouls won">FW</th><th class="num" title="Fouls conceded">FC</th><th class="num" title="Offsides">O</th><th class="num" title="Shots created (assists + key passes)">SCA</th></tr>
           <tr class="group-row"><td colspan="14"><span class="dot"></span>Attacking midfielders</td></tr>
           <tr><td class="player">Zivkovic</td><td class="num">4</td><td class="num">301</td><td class="num g-pos" title="2 left-foot (1 penalty)">2</td><td class="num">1.85</td><td class="num g-pos">2</td><td class="num">7</td><td class="num">3</td><td class="num">123</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num">6</td><td class="num">0</td><td class="num">7</td></tr>
           <tr><td class="player">Pelkas</td><td class="num">4</td><td class="num">252</td><td class="num g-pos" title="1 right-foot (outside box), 1 left-foot, 1 headed">3</td><td class="num">1.29</td><td class="num">0</td><td class="num">11</td><td class="num">4</td><td class="num">92</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td class="num">6</td><td class="num">1</td><td class="num">2</td></tr>
@@ -368,6 +380,7 @@
           <tr><td class="player">Ali</td><td class="num">3</td><td class="num">146</td><td class="num">0</td><td class="num">0.12</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">37</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td></tr>
           <!-- Despodov: 0 MP, hidden until he plays -->
 
+          <tr class="repeat-head"><th>Player</th><th class="num" title="Matches played">MP</th><th class="num" title="Minutes played">MIN</th><th class="num" title="Goals scored">GS</th><th class="num no-caps" title="Expected goals">xG</th><th class="num" title="Assists">A</th><th class="num" title="Total shot attempts">S</th><th class="num" title="Shots on target">SoT</th><th class="num" title="Passes">P</th><th class="num" title="Yellow cards">Y</th><th class="num" title="Red cards">R</th><th class="num" title="Fouls won">FW</th><th class="num" title="Fouls conceded">FC</th><th class="num" title="Offsides">O</th><th class="num" title="Shots created (assists + key passes)">SCA</th></tr>
           <tr class="group-row"><td colspan="14"><span class="dot"></span>Forwards</td></tr>
           <tr><td class="player">Mythou</td><td class="num">3</td><td class="num">38</td><td class="num g-pos" title="1 left-foot">1</td><td class="num">0.68</td><td class="num">0</td><td class="num">3</td><td class="num">1</td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
           <tr><td class="player">Ndiaye</td><td class="num">4</td><td class="num">322</td><td class="num g-pos" title="1 penalty (right-foot)">1</td><td class="num">1.39</td><td class="num">0</td><td class="num">6</td><td class="num">4</td><td class="num">62</td><td class="num">1</td><td class="num">0</td><td class="num">8</td><td class="num">9</td><td class="num">1</td><td class="num">2</td></tr>
