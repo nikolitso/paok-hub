@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAOK Hub — Teams Stats 2026-27</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --ink: #16171a;
+    --ink-dim: #55585f;
+    --line: #d9d9d5;
+    --accent: #1c1f6b;
+    --accent-soft: #e7e8f5;
+    --good: #1a7a4c;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101114;
+      --surface: #17181c;
+      --surface-2: #1d1f24;
+      --ink: #edeeef;
+      --ink-dim: #9a9ca3;
+      --line: #2b2d33;
+      --accent: #8f96ff;
+      --accent-soft: #232650;
+      --good: #4fce94;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --surface: #17181c;
+    --surface-2: #1d1f24;
+    --ink: #edeeef;
+    --ink-dim: #9a9ca3;
+    --line: #2b2d33;
+    --accent: #8f96ff;
+    --accent-soft: #232650;
+    --good: #4fce94;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.page-head {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Archivo", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.5vw, 42px);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .meta-pill {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+
+  .pos-group {
+    margin-top: 30px;
+  }
+
+  .pos-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .pos-label .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 480px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 11px 14px;
+    white-space: nowrap;
+  }
+
+  thead th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  thead th:hover {
+    color: var(--ink);
+  }
+
+  thead th.sorted-asc::after {
+    content: "\2191";
+    margin-left: 4px;
+  }
+
+  thead th.sorted-desc::after {
+    content: "\2193";
+    margin-left: 4px;
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--line);
+  }
+
+  tbody tr:nth-child(even) td {
+    background: var(--surface-2);
+  }
+
+  tbody tr:hover td {
+    background: var(--accent-soft, var(--surface-2));
+    filter: brightness(0.97);
+  }
+
+  td.num, th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+  }
+
+  td.team, th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface);
+    box-shadow: 1px 0 0 var(--line);
+  }
+
+  thead th:first-child {
+    z-index: 2;
+    background: var(--surface-2);
+  }
+
+  tbody tr:nth-child(even) td.team {
+    background: var(--surface-2);
+  }
+
+  td.team {
+    font-weight: 600;
+  }
+
+  tbody tr.paok td {
+    background: var(--accent-soft) !important;
+  }
+
+  tbody tr.paok td.team {
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pos-group { animation: rise 0.35s ease both; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-head">
+    <p class="eyebrow"><a href="index.html" style="color:inherit;text-decoration:none;">PAOK Hub</a></p>
+    <h1>Teams Stats, 2026&ndash;27</h1>
+    <div class="meta-row">
+      <span class="meta-pill">Superleague &middot; all 14 teams</span>
+      <span class="meta-pill">After matchday 4 &middot; per-game averages</span>
+    </div>
+  </header>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Distribution</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Team</th>
+          <th class="num" title="Passes per game">P</th>
+          <th class="num" title="Long passes per game">LP</th>
+          <th class="num" title="Passing accuracy">PA%</th>
+          <th class="num" title="Passing accuracy in opponents' half">PAOp%</th>
+          <th class="num" title="Crosses per game">Cr</th>
+          <th class="num" title="Crossing accuracy">CA%</th>
+        </tr></thead>
+        <tbody id="tbody-distribution"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Attack</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Team</th>
+          <th class="num" title="Goals per game">G</th>
+          <th class="num" title="Shots per game">S</th>
+          <th class="num" title="Shots on target per game">SoT</th>
+          <th class="num" title="Blocked shots per game">BS</th>
+          <th class="num" title="Shots outside the box per game">SOB</th>
+          <th class="num" title="Shots inside the box per game">SIB</th>
+          <th class="num" title="Shooting accuracy">SA%</th>
+        </tr></thead>
+        <tbody id="tbody-attack"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Defence</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Team</th>
+          <th class="num" title="Tackles won per game">Tk</th>
+          <th class="num" title="Tackle success rate">Tk%</th>
+          <th class="num" title="Clearances per game">Cl</th>
+        </tr></thead>
+        <tbody id="tbody-defence"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Discipline</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Team</th>
+          <th class="num" title="Fouls conceded per game">FC</th>
+          <th class="num" title="Yellow cards per game">Y</th>
+          <th class="num" title="Red cards per game">R</th>
+        </tr></thead>
+        <tbody id="tbody-discipline"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <p style="margin-top:30px; color:var(--ink-dim); font-family:'IBM Plex Mono',monospace; font-size:12px;">
+    Team totals are reconstructed by summing each team's individual player stats across their 4 matchday-1&ndash;4 fixtures (Scoresway does not publish team-level aggregates for this competition). Goals may undercount by 1 in matches decided partly by an own goal, since own goals are not attributed to any player's individual tally.
+  </p>
+
+</div>
+
+<script>
+(function () {
+  var data = [
+    {"team":"AEK Athens","Passes":522.2,"LongPasses":46.8,"PassAcc":87.0,"PassAccOppHalf":80.3,"Crosses":18.0,"CrossAcc":37.5,"Goals":2.5,"Shots":18.5,"ShotsOnTarget":7.2,"BlockedShots":3.2,"ShotsOutsideBox":6.0,"ShotsInsideBox":12.5,"ShootAcc":39.2,"Tackles":14.2,"TackleSuccess":56.4,"Clearances":15.8,"FoulsConceded":15.0,"YellowCards":1.5,"RedCards":0.0},
+    {"team":"Aris","Passes":372.8,"LongPasses":51.5,"PassAcc":80.2,"PassAccOppHalf":72.7,"Crosses":18.5,"CrossAcc":23.0,"Goals":1.2,"Shots":14.5,"ShotsOnTarget":5.5,"BlockedShots":5.2,"ShotsOutsideBox":5.0,"ShotsInsideBox":9.5,"ShootAcc":37.9,"Tackles":14.2,"TackleSuccess":73.1,"Clearances":20.5,"FoulsConceded":17.8,"YellowCards":2.5,"RedCards":0.0},
+    {"team":"Asteras","Passes":393.0,"LongPasses":61.5,"PassAcc":80.2,"PassAccOppHalf":72.8,"Crosses":25.5,"CrossAcc":29.4,"Goals":0.5,"Shots":12.8,"ShotsOnTarget":4.8,"BlockedShots":2.5,"ShotsOutsideBox":3.0,"ShotsInsideBox":9.8,"ShootAcc":37.3,"Tackles":15.5,"TackleSuccess":61.4,"Clearances":27.2,"FoulsConceded":13.8,"YellowCards":2.2,"RedCards":0.0},
+    {"team":"Atromitos","Passes":338.8,"LongPasses":46.5,"PassAcc":78.8,"PassAccOppHalf":69.7,"Crosses":18.5,"CrossAcc":20.3,"Goals":0.8,"Shots":11.0,"ShotsOnTarget":2.5,"BlockedShots":2.8,"ShotsOutsideBox":5.5,"ShotsInsideBox":5.5,"ShootAcc":22.7,"Tackles":13.2,"TackleSuccess":82.8,"Clearances":32.8,"FoulsConceded":17.2,"YellowCards":3.2,"RedCards":0.0},
+    {"team":"Iraklis 1908","Passes":340.5,"LongPasses":48.8,"PassAcc":81.5,"PassAccOppHalf":71.7,"Crosses":13.2,"CrossAcc":17.0,"Goals":1.0,"Shots":8.2,"ShotsOnTarget":1.5,"BlockedShots":2.2,"ShotsOutsideBox":4.5,"ShotsInsideBox":3.8,"ShootAcc":18.2,"Tackles":12.2,"TackleSuccess":72.1,"Clearances":29.0,"FoulsConceded":17.8,"YellowCards":2.2,"RedCards":0.2},
+    {"team":"Kalamata","Passes":312.5,"LongPasses":43.5,"PassAcc":77.8,"PassAccOppHalf":69.2,"Crosses":15.5,"CrossAcc":32.3,"Goals":1.2,"Shots":11.0,"ShotsOnTarget":3.8,"BlockedShots":1.0,"ShotsOutsideBox":4.5,"ShotsInsideBox":6.5,"ShootAcc":34.1,"Tackles":14.5,"TackleSuccess":73.4,"Clearances":29.5,"FoulsConceded":15.0,"YellowCards":4.0,"RedCards":0.5},
+    {"team":"Kifisia","Passes":367.5,"LongPasses":43.5,"PassAcc":84.3,"PassAccOppHalf":76.4,"Crosses":16.8,"CrossAcc":23.9,"Goals":0.5,"Shots":11.8,"ShotsOnTarget":3.5,"BlockedShots":3.2,"ShotsOutsideBox":4.2,"ShotsInsideBox":7.5,"ShootAcc":29.8,"Tackles":10.5,"TackleSuccess":65.6,"Clearances":26.2,"FoulsConceded":17.5,"YellowCards":3.8,"RedCards":0.5},
+    {"team":"Levadiakos","Passes":386.5,"LongPasses":61.2,"PassAcc":79.8,"PassAccOppHalf":70.0,"Crosses":18.2,"CrossAcc":19.2,"Goals":0.0,"Shots":9.5,"ShotsOnTarget":1.0,"BlockedShots":3.5,"ShotsOutsideBox":5.0,"ShotsInsideBox":4.5,"ShootAcc":10.5,"Tackles":21.8,"TackleSuccess":73.1,"Clearances":27.0,"FoulsConceded":14.0,"YellowCards":1.5,"RedCards":0.2},
+    {"team":"OFI","Passes":449.2,"LongPasses":51.8,"PassAcc":85.9,"PassAccOppHalf":77.3,"Crosses":14.5,"CrossAcc":31.0,"Goals":1.2,"Shots":9.2,"ShotsOnTarget":3.0,"BlockedShots":1.0,"ShotsOutsideBox":2.8,"ShotsInsideBox":6.5,"ShootAcc":32.4,"Tackles":12.2,"TackleSuccess":67.1,"Clearances":22.0,"FoulsConceded":14.2,"YellowCards":1.2,"RedCards":0.0},
+    {"team":"Olympiakos","Passes":496.8,"LongPasses":54.5,"PassAcc":83.5,"PassAccOppHalf":75.6,"Crosses":35.0,"CrossAcc":22.9,"Goals":0.8,"Shots":19.5,"ShotsOnTarget":6.2,"BlockedShots":4.5,"ShotsOutsideBox":5.0,"ShotsInsideBox":14.5,"ShootAcc":32.1,"Tackles":17.2,"TackleSuccess":72.6,"Clearances":18.5,"FoulsConceded":15.8,"YellowCards":2.2,"RedCards":0.2},
+    {"team":"PAOK","Passes":376.0,"LongPasses":47.5,"PassAcc":78.8,"PassAccOppHalf":71.3,"Crosses":13.0,"CrossAcc":21.2,"Goals":2.2,"Shots":11.2,"ShotsOnTarget":4.0,"BlockedShots":1.8,"ShotsOutsideBox":3.2,"ShotsInsideBox":8.0,"ShootAcc":35.6,"Tackles":17.5,"TackleSuccess":55.1,"Clearances":29.0,"FoulsConceded":16.2,"YellowCards":1.2,"RedCards":0.2},
+    {"team":"Panaitolikos","Passes":309.2,"LongPasses":60.8,"PassAcc":75.3,"PassAccOppHalf":65.5,"Crosses":8.8,"CrossAcc":42.9,"Goals":1.8,"Shots":9.5,"ShotsOnTarget":3.2,"BlockedShots":2.2,"ShotsOutsideBox":2.5,"ShotsInsideBox":7.0,"ShootAcc":34.2,"Tackles":11.0,"TackleSuccess":81.5,"Clearances":33.8,"FoulsConceded":17.0,"YellowCards":2.2,"RedCards":0.0},
+    {"team":"Panathinaikos","Passes":563.2,"LongPasses":36.2,"PassAcc":90.3,"PassAccOppHalf":87.2,"Crosses":24.2,"CrossAcc":25.8,"Goals":2.5,"Shots":21.5,"ShotsOnTarget":8.8,"BlockedShots":6.5,"ShotsOutsideBox":7.0,"ShotsInsideBox":14.5,"ShootAcc":40.7,"Tackles":13.0,"TackleSuccess":81.2,"Clearances":11.5,"FoulsConceded":18.0,"YellowCards":2.2,"RedCards":0.2},
+    {"team":"Volos","Passes":348.8,"LongPasses":48.2,"PassAcc":80.0,"PassAccOppHalf":73.8,"Crosses":19.5,"CrossAcc":28.2,"Goals":0.8,"Shots":11.0,"ShotsOnTarget":2.5,"BlockedShots":2.8,"ShotsOutsideBox":3.8,"ShotsInsideBox":7.2,"ShootAcc":22.7,"Tackles":12.8,"TackleSuccess":78.5,"Clearances":21.8,"FoulsConceded":16.0,"YellowCards":4.2,"RedCards":0.0}
+  ];
+
+  function num(v, decimals) {
+    return v.toFixed(decimals === undefined ? 1 : decimals);
+  }
+
+  function rowClass(team) {
+    return team === "PAOK" ? ' class="paok"' : '';
+  }
+
+  var distBody = document.getElementById('tbody-distribution');
+  var attBody = document.getElementById('tbody-attack');
+  var defBody = document.getElementById('tbody-defence');
+  var disBody = document.getElementById('tbody-discipline');
+
+  data.forEach(function (r) {
+    distBody.insertAdjacentHTML('beforeend',
+      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<td class="num">' + num(r.Passes) + '</td>' +
+      '<td class="num">' + num(r.LongPasses) + '</td>' +
+      '<td class="num">' + num(r.PassAcc) + '%</td>' +
+      '<td class="num">' + num(r.PassAccOppHalf) + '%</td>' +
+      '<td class="num">' + num(r.Crosses) + '</td>' +
+      '<td class="num">' + num(r.CrossAcc) + '%</td></tr>');
+
+    attBody.insertAdjacentHTML('beforeend',
+      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<td class="num">' + num(r.Goals) + '</td>' +
+      '<td class="num">' + num(r.Shots) + '</td>' +
+      '<td class="num">' + num(r.ShotsOnTarget) + '</td>' +
+      '<td class="num">' + num(r.BlockedShots) + '</td>' +
+      '<td class="num">' + num(r.ShotsOutsideBox) + '</td>' +
+      '<td class="num">' + num(r.ShotsInsideBox) + '</td>' +
+      '<td class="num">' + num(r.ShootAcc) + '%</td></tr>');
+
+    defBody.insertAdjacentHTML('beforeend',
+      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<td class="num">' + num(r.Tackles) + '</td>' +
+      '<td class="num">' + num(r.TackleSuccess) + '%</td>' +
+      '<td class="num">' + num(r.Clearances) + '</td></tr>');
+
+    disBody.insertAdjacentHTML('beforeend',
+      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<td class="num">' + num(r.FoulsConceded) + '</td>' +
+      '<td class="num">' + num(r.YellowCards) + '</td>' +
+      '<td class="num">' + num(r.RedCards) + '</td></tr>');
+  });
+
+  function parseVal(text, isNumeric) {
+    var t = text.trim();
+    if (!isNumeric) return t.toLowerCase();
+    if (t === '' || t === '—') return -1;
+    var n = parseFloat(t.replace('%', ''));
+    return isNaN(n) ? -1 : n;
+  }
+
+  document.querySelectorAll('.table-scroll table').forEach(function (table) {
+    var thead = table.querySelector('thead');
+    var tbody = table.querySelector('tbody');
+    if (!thead || !tbody) return;
+    var ths = Array.prototype.slice.call(thead.querySelectorAll('th'));
+
+    ths.forEach(function (th, idx) {
+      th.addEventListener('click', function () {
+        var isNumeric = idx !== 0;
+        var nextDir = th.classList.contains('sorted-desc') ? 'asc' : 'desc';
+        ths.forEach(function (h) { h.classList.remove('sorted-asc', 'sorted-desc'); });
+        th.classList.add(nextDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+        rows.sort(function (a, b) {
+          var av = parseVal(a.children[idx].textContent, isNumeric);
+          var bv = parseVal(b.children[idx].textContent, isNumeric);
+          if (av < bv) return nextDir === 'asc' ? -1 : 1;
+          if (av > bv) return nextDir === 'asc' ? 1 : -1;
+          return 0;
+        });
+        rows.forEach(function (r) { tbody.appendChild(r); });
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
