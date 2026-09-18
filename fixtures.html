@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAOK Fixtures 2026-27</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --ink: #16171a;
+    --ink-dim: #55585f;
+    --line: #d9d9d5;
+    --accent: #1c1f6b;
+    --accent-soft: #e7e8f5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101114;
+      --surface: #17181c;
+      --surface-2: #1d1f24;
+      --ink: #edeeef;
+      --ink-dim: #9a9ca3;
+      --line: #2b2d33;
+      --accent: #8f96ff;
+      --accent-soft: #232650;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --surface: #17181c;
+    --surface-2: #1d1f24;
+    --ink: #edeeef;
+    --ink-dim: #9a9ca3;
+    --line: #2b2d33;
+    --accent: #8f96ff;
+    --accent-soft: #232650;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.page-head {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Archivo", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.5vw, 42px);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .sub {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .note-line {
+    margin-top: 16px;
+    color: var(--ink-dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+  }
+
+  .match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .match-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .match-card .comp-badge {
+    flex: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 11px;
+  }
+
+  .match-card .match-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .match-card .teams {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .match-card .match-meta {
+    margin-top: 4px;
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  footer.page-foot {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-head">
+    <p class="eyebrow"><a href="index.html" style="color:inherit;text-decoration:none;">PAOK Hub</a></p>
+    <h1>Fixtures</h1>
+    <p class="sub">PAOK's upcoming matches across all competitions.</p>
+    <p class="note-line">Eliminated from the Conference League play-off by Brann (27 Aug) &mdash; no European fixtures remain this season.</p>
+  </header>
+
+  <div class="match-list">
+    <div class="match-card">
+      <span class="comp-badge">SL &middot; MD5</span>
+      <div class="match-body">
+        <div class="teams">Panaitolikos vs PAOK Thessaloniki FC</div>
+        <div class="match-meta">
+          <span>Sunday 20 September 2026, 21:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <span class="comp-badge">SL &middot; MD6</span>
+      <div class="match-body">
+        <div class="teams">PAOK Thessaloniki FC vs Kalamata</div>
+        <div class="match-meta">
+          <span>Monday 12 October 2026, 18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <span class="comp-badge">SL &middot; MD7</span>
+      <div class="match-body">
+        <div class="teams">PAOK Thessaloniki FC vs Iraklis 1908</div>
+        <div class="match-meta">
+          <span>Sunday 18 October 2026, 21:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <span class="comp-badge">Greek Cup</span>
+      <div class="match-body">
+        <div class="teams">PAOK Thessaloniki FC vs AEK Athens</div>
+        <div class="match-meta">
+          <span>Tuesday 27 October 2026, TBC</span>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <span class="comp-badge">Greek Cup</span>
+      <div class="match-body">
+        <div class="teams">Kalamata vs PAOK Thessaloniki FC</div>
+        <div class="match-meta">
+          <span>Wednesday 2 December 2026, TBC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-foot">
+    SL = Super League. Kickoff times local (Athens). Cup kickoff times to be confirmed closer to the date.
+  </footer>
+
+</div>
+
+</body>
+</html>
