@@ -249,33 +249,37 @@
   }
 
   .p-bio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
-    gap: 4px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     margin: 0 0 14px;
-    padding-bottom: 12px;
+    padding-bottom: 14px;
     border-bottom: 1px dashed var(--line);
   }
 
-  .p-bio div {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
+  .p-bio-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 10px;
   }
 
   .p-bio-label {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 10px;
+    font-size: 9.5px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ink-dim);
-    flex: none;
   }
 
   .p-bio-val {
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 600;
-    text-align: right;
   }
 
   .p-row {
@@ -420,7 +424,7 @@
 
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/1_Pavlenka_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Pavlenka</h3></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">14 April 1992 (34 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Hlučín, Czech Republic</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">1</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.96m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">14 April 1992 (34 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Hlučín, Czech Republic</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">1</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.96m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Concentration</span>
           <span class="chip good">Penalty saving</span>
@@ -436,7 +440,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/99_Tsiftsis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Tsiftsis</h3></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">21 July 1999 (27 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Giannitsa, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">99</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.91m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">21 July 1999 (27 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Giannitsa, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">99</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.91m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Defensive blocks &amp; reflexes</span>
           <span class="chip good">Aerial claiming / concentration</span>
@@ -462,7 +466,7 @@
 
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/3_Kenny_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Kenny</h3><span class="p-pos">Right-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">15 March 1997 (29 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Liverpool, England</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">3</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.76m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">15 March 1997 (29 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Liverpool, England</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">3</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.76m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
           <span class="chip good">Holding on to the ball</span>
@@ -482,7 +486,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/5_Michailidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Michailidis</h3><span class="p-pos">Centre-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">18 February 2000 (26 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Giannitsa, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">5</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">18 February 2000 (26 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Giannitsa, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">5</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Passing / distribution</span>
           <span class="chip good">Interceptions / aerial duels</span>
@@ -499,7 +503,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2021/01/21_Baba_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Baba</h3><span class="p-pos">Left-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">2 July 1994 (32 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Tamale, Ghana</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">21</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.79m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">2 July 1994 (32 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Tamale, Ghana</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">21</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.79m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Defensive contribution</span>
           <span class="chip good">Tackling</span>
@@ -517,7 +521,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/6_Elustondo_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Elustondo</h3><span class="p-pos">Centre-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">28 March 1994 (32 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Beasain, Spain</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">6</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.80m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">28 March 1994 (32 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Beasain, Spain</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">6</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.80m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip-none">No significant strengths</span>
           </div>
@@ -535,7 +539,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Diego-Costa_Profile_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Diego Costa</h3><span class="p-pos">Centre-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">21 July 1999 (27 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Campo Grande, Brazil</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">19</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.83m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">21 July 1999 (27 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Campo Grande, Brazil</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">19</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.83m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Passing</span>
@@ -552,7 +556,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2016/06/13_Giannoulis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Giannoulis</h3><span class="p-pos">Left-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">17 October 1995 (30 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Katerini, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">13</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.78m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">17 October 1995 (30 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Katerini, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">13</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.78m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Key passes</span>
           <span class="chip good">Crossing</span>
@@ -571,7 +575,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/97_Bataoulas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Bataoulas</h3><span class="p-pos">Centre-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">14 March 2007 (19 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Ptolemaida, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">97</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.90m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">14 March 2007 (19 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Ptolemaida, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">97</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.90m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Aerial prowess</span>
           </div>
@@ -587,7 +591,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/4_Hatzidiakos_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Chatzidiakos</h3><span class="p-pos">Centre-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">18 January 1997 (29 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kremasti, Rhodes, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">4</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.85m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">18 January 1997 (29 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kremasti, Rhodes, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">4</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.85m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Key passes</span>
           <span class="chip good">Crossing</span>
@@ -613,7 +617,7 @@
 
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/20_Zafeiris_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Zafeiris</h3><span class="p-pos">Central midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">23 February 2003 (23 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Athens, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">20</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.73m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">23 February 2003 (23 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Athens, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">20</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.73m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Passing economy</span>
           <span class="chip good">Ball retention</span>
@@ -630,7 +634,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/32_Taylor_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Taylor</h3><span class="p-pos">Defensive midfielder / Left-back</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">5 November 1997 (28 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Greenock, Scotland</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">32</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.71m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">5 November 1997 (28 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Greenock, Scotland</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">32</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.71m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Holding on to the ball</span>
           <span class="chip good"><span class="tier">Very Strong</span> Passing</span>
@@ -648,7 +652,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/7_Santamaria_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Santamaria</h3><span class="p-pos">Defensive midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">9 March 1995 (31 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Saint-Doulchard, France</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">7</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.83m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">9 March 1995 (31 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Saint-Doulchard, France</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">7</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.83m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Aerial duels</span>
           <span class="chip good">Blocking the ball</span>
@@ -668,7 +672,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/16_Ugresic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Ugresic</h3><span class="p-pos">Central midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">15 July 2006 (20 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kikinda, Serbia</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">16</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">15 July 2006 (20 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kikinda, Serbia</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">16</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Off-the-ball movement</span>
           <span class="chip good">Finishing</span>
@@ -684,7 +688,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/07/23_Louchet_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Louchet</h3><span class="p-pos">Central midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">4 May 2003 (23 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Manosque, France</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">23</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.78m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">4 May 2003 (23 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Manosque, France</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">23</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.78m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Direct free-kicks</span>
@@ -704,7 +708,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/2_Camara_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Camara</h3><span class="p-pos">Central midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">28 February 1997 (29 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Matam, Guinea</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">2</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.82m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">28 February 1997 (29 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Matam, Guinea</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">2</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.82m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Aerial duels</span>
           <span class="chip good">Through balls</span>
@@ -721,7 +725,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/18_Jakic_Roster_27-2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Jakic</h3><span class="p-pos">Defensive midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">14 May 1997 (29 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Split, Croatia</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">18</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.81m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">14 May 1997 (29 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Split, Croatia</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">18</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.81m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip-none">No significant strengths</span>
           </div>
@@ -736,7 +740,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/8_Meite_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Meite</h3><span class="p-pos">Defensive midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">17 March 1994 (32 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Paris, France</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">8</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.87m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">17 March 1994 (32 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Paris, France</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">8</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.87m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip-none">No significant strengths</span>
           </div>
@@ -762,7 +766,7 @@
 
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/14_Zivkovic_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Zivkovic</h3><span class="p-pos">Right winger</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">11 July 1996 (30 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Niš, Serbia</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">14</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.69m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">11 July 1996 (30 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Niš, Serbia</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">14</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.69m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Passing</span>
           <span class="chip good">Through balls</span>
@@ -785,7 +789,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/10_Pelkas_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Pelkas</h3><span class="p-pos">Attacking midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">26 October 1993 (32 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Giannitsa, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">10</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.77m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">26 October 1993 (32 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Giannitsa, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">10</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.77m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Finishing</span>
           <span class="chip good">Long shots</span>
@@ -807,7 +811,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/22_Ali_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Ali</h3><span class="p-pos">Left winger</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">1 July 1998 (28 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Spånga, Sweden</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">22</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.74m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">1 July 1998 (28 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Spånga, Sweden</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">22</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.74m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Dribbling &amp; 1v1</span>
           <span class="chip good">Chance creation</span>
@@ -827,7 +831,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/52_Chatsidis_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Chatsidis</h3><span class="p-pos">Right winger</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">14 June 2006 (20 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kozani, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">52</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.84m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">14 June 2006 (20 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kozani, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">52</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.84m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Work rate / pressing</span>
           </div>
@@ -842,7 +846,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/11_Taison_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Taison</h3><span class="p-pos">Left winger</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">17 January 1988 (38 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Pelotas, Brazil</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">11</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.72m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">17 January 1988 (38 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Pelotas, Brazil</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">11</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.72m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Finishing</span>
           <span class="chip good">Through balls</span>
@@ -858,7 +862,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/47_Shoretire_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Shoretire</h3><span class="p-pos">Left winger / Attacking midfielder</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">2 February 2004 (22 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Newcastle, England</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">47</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.71m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">2 February 2004 (22 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Newcastle, England</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">47</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.71m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Defensive contribution</span>
           </div>
@@ -875,7 +879,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/77_Despodov_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Despodov</h3><span class="p-pos">Right winger</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">11 November 1996 (29 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kresna, Bulgaria</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">77</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.80m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">11 November 1996 (29 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Kresna, Bulgaria</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">77</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.80m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Key passes / crossing</span>
           <span class="chip good">Dribbling</span>
@@ -900,7 +904,7 @@
 
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/08/27_Ndiaye_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Ndiaye</h3><span class="p-pos">Centre-forward</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">23 January 1996 (30 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Dakar, Senegal</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">27</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.90m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">23 January 1996 (30 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Dakar, Senegal</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">27</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.90m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good">Finishing</span>
           </div>
@@ -918,7 +922,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2025/06/56_Mythou_Roster_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Mythou</h3><span class="p-pos">Centre-forward</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">22 May 2007 (19 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Thessaloniki, Greece</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">56</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">22 May 2007 (19 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Thessaloniki, Greece</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">56</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Very Strong</span> Finishing</span>
           <span class="chip good">Attacking positioning</span>
@@ -935,7 +939,7 @@
       </div>
       <div class="p-card">
         <div class="p-head"><img class="p-thumb" src="https://www.paokfc.gr/wp-content/uploads/2026/09/Simon_Banza_Profile_27.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="p-name"><h3>Banza</h3><span class="p-pos">Centre-forward</span></div></div>
-        <div class="p-bio"><div><span class="p-bio-label">Born</span><span class="p-bio-val">13 August 1996 (30 yo)</span></div><div><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Creil, France</span></div><div><span class="p-bio-label">Shirt No</span><span class="p-bio-val">24</span></div><div><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></div></div>
+        <div class="p-bio"><span class="p-bio-pill"><span class="p-bio-label">Born</span><span class="p-bio-val">13 August 1996 (30 yo)</span></span><span class="p-bio-pill"><span class="p-bio-label">Birthplace</span><span class="p-bio-val">Creil, France</span></span><span class="p-bio-pill"><span class="p-bio-label">Shirt No</span><span class="p-bio-val">24</span></span><span class="p-bio-pill"><span class="p-bio-label">Height</span><span class="p-bio-val">1.88m</span></span></div>
         <div class="p-row"><span class="p-row-label">Strengths</span><div class="p-chips">
           <span class="chip good"><span class="tier">Strong</span> Finishing</span>
           <span class="chip good"><span class="tier">Strong</span> Headed attempts</span>
