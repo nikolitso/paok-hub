@@ -342,14 +342,14 @@
 
   var avg = {"Passes":527.4,"LongPasses":45.83,"PassAcc":86.93,"PassAccOppHalf":81.03,"Crosses":25.73,"CrossAcc":28.73,"Goals":1.93,"Shots":19.83,"ShotsOnTarget":7.4,"BlockedShots":4.73,"ShotsOutsideBox":6.0,"ShotsInsideBox":13.83,"ShootAcc":37.33,"Tackles":14.8,"TackleSuccess":70.07,"Clearances":15.27,"FoulsConceded":16.27,"YellowCards":1.97,"RedCards":0.13,"DuelsSuccess":49.33,"AerialWonPct":54.67,"Interceptions":6.3,"Offsides":2.53,"Corners":6.63,"Saves":2.07,"ShotsFacedOnTarget":2.6,"SaveSuccess":80.6,"CrossesClaimed":0.67,"CrossesNotClaimed":0.0,"Drops":0.07,"Punches":0.13};
 
-  // true = higher is better, false = lower is better, null = no verdict (volume/style stat)
+  // true = higher is better, false = lower is better
   var direction = {
     DuelsSuccess: true, AerialWonPct: true, Interceptions: true, Offsides: false, Corners: true,
-    Passes: null, LongPasses: null, PassAcc: true, PassAccOppHalf: true, Crosses: null, CrossAcc: true,
-    Goals: true, Shots: null, ShotsOnTarget: true, BlockedShots: null, ShotsOutsideBox: null, ShotsInsideBox: true, ShootAcc: true,
-    Tackles: null, TackleSuccess: true, Clearances: null,
+    Passes: true, LongPasses: true, PassAcc: true, PassAccOppHalf: true, Crosses: true, CrossAcc: true,
+    Goals: true, Shots: true, ShotsOnTarget: true, BlockedShots: false, ShotsOutsideBox: false, ShotsInsideBox: true, ShootAcc: true,
+    Tackles: true, TackleSuccess: true, Clearances: false,
     FoulsConceded: false, YellowCards: false, RedCards: false,
-    Saves: null, ShotsFacedOnTarget: false, SaveSuccess: true, CrossesClaimed: true, CrossesNotClaimed: false, Drops: false, Punches: null
+    Saves: false, ShotsFacedOnTarget: false, SaveSuccess: true, CrossesClaimed: true, CrossesNotClaimed: false, Drops: false, Punches: false
   };
 
   var pct = {
