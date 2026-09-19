@@ -164,6 +164,13 @@
     color: var(--ink);
   }
 
+  thead th.rank-col {
+    cursor: default;
+  }
+  thead th.rank-col:hover {
+    color: var(--ink-dim);
+  }
+
   thead th.sorted-asc::after {
     content: "\2191";
     margin-left: 4px;
@@ -194,25 +201,53 @@
     font-size: 13px;
   }
 
-  td.team, th:first-child {
+  td.rank {
+    color: var(--ink-dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    text-align: right;
+    width: 26px;
+  }
+
+  td.team, th:nth-child(2) {
     position: sticky;
-    left: 0;
+    left: 26px;
     z-index: 1;
     background: var(--surface);
     box-shadow: 1px 0 0 var(--line);
   }
 
-  thead th:first-child {
+  th:first-child, td.rank {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface);
+  }
+
+  thead th:first-child, thead th:nth-child(2) {
     z-index: 2;
     background: var(--surface-2);
   }
 
-  tbody tr:nth-child(even) td.team {
+  tbody tr:nth-child(even) td.team, tbody tr:nth-child(even) td.rank {
     background: var(--surface-2);
   }
 
   td.team {
     font-weight: 600;
+  }
+
+  .team-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .crest {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    object-fit: contain;
   }
 
   tbody tr.paok td {
@@ -222,6 +257,10 @@
   tbody tr.paok td.team {
     color: var(--accent);
     font-weight: 800;
+  }
+
+  tbody tr.paok td.rank {
+    color: var(--accent);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -251,6 +290,7 @@
     <div class="table-scroll">
       <table>
         <thead><tr>
+          <th class="num rank-col" title="Rank in current sort order">#</th>
           <th>Team</th>
           <th class="num" title="Passes per game">P</th>
           <th class="num" title="Long passes per game">LP</th>
@@ -269,6 +309,7 @@
     <div class="table-scroll">
       <table>
         <thead><tr>
+          <th class="num rank-col" title="Rank in current sort order">#</th>
           <th>Team</th>
           <th class="num" title="Goals per game">G</th>
           <th class="num" title="Shots per game">S</th>
@@ -288,6 +329,7 @@
     <div class="table-scroll">
       <table>
         <thead><tr>
+          <th class="num rank-col" title="Rank in current sort order">#</th>
           <th>Team</th>
           <th class="num" title="Tackles won per game">Tk</th>
           <th class="num" title="Tackle success rate">Tk%</th>
@@ -303,6 +345,7 @@
     <div class="table-scroll">
       <table>
         <thead><tr>
+          <th class="num rank-col" title="Rank in current sort order">#</th>
           <th>Team</th>
           <th class="num" title="Fouls conceded per game">FC</th>
           <th class="num" title="Yellow cards per game">Y</th>
@@ -334,6 +377,23 @@
     {"team":"Volos","Passes":348.8,"LongPasses":48.2,"PassAcc":80.0,"PassAccOppHalf":73.8,"Crosses":19.5,"CrossAcc":28.2,"Goals":0.8,"Shots":11.0,"ShotsOnTarget":2.5,"BlockedShots":2.8,"ShotsOutsideBox":3.8,"ShotsInsideBox":7.2,"ShootAcc":22.7,"Tackles":12.8,"TackleSuccess":78.5,"Clearances":21.8,"FoulsConceded":16.0,"YellowCards":4.2,"RedCards":0.0}
   ];
 
+  var badges = {
+    "AEK Athens": "7ruua9q5rtswwi5d6xtquuto5",
+    "Aris": "90z9l1k46z46ep9oupipgganh",
+    "Asteras": "c53eublb5ds9v1rlscm8x39pq",
+    "Atromitos": "4gex5os8jassavy6lopipbcz3",
+    "Iraklis 1908": "ab4q2bo4gqoamuoco75ps4c2c",
+    "Kalamata": "bbcekwfqk3v5b5howjz99gqaz",
+    "Kifisia": "8vht8t1pm8z9gkkeuzxtkfatn",
+    "Levadiakos": "1j8ifp7frhzci6o6kvnl1glif",
+    "OFI": "dr4emys1xpm2h54oid0q5y2nx",
+    "Olympiakos": "9ghx7vbghs3628n5chm9r8ig3",
+    "PAOK": "deazflnflqmejndo05gviznzd",
+    "Panaitolikos": "dozhxtpww3paixmvttljtduge",
+    "Panathinaikos": "4ws3k9155net1ydbvr8c940dy",
+    "Volos": "937i26v5naqzhwxcelwtgou3u"
+  };
+
   function num(v, decimals) {
     return v.toFixed(decimals === undefined ? 1 : decimals);
   }
@@ -342,14 +402,22 @@
     return team === "PAOK" ? ' class="paok"' : '';
   }
 
+  function teamCell(team) {
+    var id = badges[team];
+    var img = id ? '<img class="crest" src="https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=' + id + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'">' : '';
+    return '<td class="team"><div class="team-cell">' + img + team + '</div></td>';
+  }
+
   var distBody = document.getElementById('tbody-distribution');
   var attBody = document.getElementById('tbody-attack');
   var defBody = document.getElementById('tbody-defence');
   var disBody = document.getElementById('tbody-discipline');
 
-  data.forEach(function (r) {
+  data.forEach(function (r, i) {
+    var rank = '<td class="rank">' + (i + 1) + '</td>';
+
     distBody.insertAdjacentHTML('beforeend',
-      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<tr' + rowClass(r.team) + '>' + rank + teamCell(r.team) +
       '<td class="num">' + num(r.Passes) + '</td>' +
       '<td class="num">' + num(r.LongPasses) + '</td>' +
       '<td class="num">' + num(r.PassAcc) + '%</td>' +
@@ -358,7 +426,7 @@
       '<td class="num">' + num(r.CrossAcc) + '%</td></tr>');
 
     attBody.insertAdjacentHTML('beforeend',
-      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<tr' + rowClass(r.team) + '>' + rank + teamCell(r.team) +
       '<td class="num">' + num(r.Goals) + '</td>' +
       '<td class="num">' + num(r.Shots) + '</td>' +
       '<td class="num">' + num(r.ShotsOnTarget) + '</td>' +
@@ -368,13 +436,13 @@
       '<td class="num">' + num(r.ShootAcc) + '%</td></tr>');
 
     defBody.insertAdjacentHTML('beforeend',
-      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<tr' + rowClass(r.team) + '>' + rank + teamCell(r.team) +
       '<td class="num">' + num(r.Tackles) + '</td>' +
       '<td class="num">' + num(r.TackleSuccess) + '%</td>' +
       '<td class="num">' + num(r.Clearances) + '</td></tr>');
 
     disBody.insertAdjacentHTML('beforeend',
-      '<tr' + rowClass(r.team) + '><td class="team">' + r.team + '</td>' +
+      '<tr' + rowClass(r.team) + '>' + rank + teamCell(r.team) +
       '<td class="num">' + num(r.FoulsConceded) + '</td>' +
       '<td class="num">' + num(r.YellowCards) + '</td>' +
       '<td class="num">' + num(r.RedCards) + '</td></tr>');
@@ -395,8 +463,9 @@
     var ths = Array.prototype.slice.call(thead.querySelectorAll('th'));
 
     ths.forEach(function (th, idx) {
+      if (idx === 0) return;
       th.addEventListener('click', function () {
-        var isNumeric = idx !== 0;
+        var isNumeric = idx !== 1;
         var nextDir = th.classList.contains('sorted-desc') ? 'asc' : 'desc';
         ths.forEach(function (h) { h.classList.remove('sorted-asc', 'sorted-desc'); });
         th.classList.add(nextDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
@@ -409,7 +478,10 @@
           if (av > bv) return nextDir === 'asc' ? 1 : -1;
           return 0;
         });
-        rows.forEach(function (r) { tbody.appendChild(r); });
+        rows.forEach(function (r, i) {
+          r.children[0].textContent = i + 1;
+          tbody.appendChild(r);
+        });
       });
     });
   });
