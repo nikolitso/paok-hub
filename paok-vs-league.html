@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAOK Hub — PAOK vs League Average</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --ink: #16171a;
+    --ink-dim: #55585f;
+    --line: #d9d9d5;
+    --accent: #1c1f6b;
+    --accent-soft: #e7e8f5;
+    --good: #1a7a4c;
+    --good-soft: #e2f2e9;
+    --bad: #a4402a;
+    --bad-soft: #f7e6e1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101114;
+      --surface: #17181c;
+      --surface-2: #1d1f24;
+      --ink: #edeeef;
+      --ink-dim: #9a9ca3;
+      --line: #2b2d33;
+      --accent: #8f96ff;
+      --accent-soft: #232650;
+      --good: #4fce94;
+      --good-soft: #17301f;
+      --bad: #e8917c;
+      --bad-soft: #3a231e;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --surface: #17181c;
+    --surface-2: #1d1f24;
+    --ink: #edeeef;
+    --ink-dim: #9a9ca3;
+    --line: #2b2d33;
+    --accent: #8f96ff;
+    --accent-soft: #232650;
+    --good: #4fce94;
+    --good-soft: #17301f;
+    --bad: #e8917c;
+    --bad-soft: #3a231e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.page-head {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Archivo", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4.5vw, 40px);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .sub {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .meta-pill {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+
+  .pos-group {
+    margin-top: 30px;
+  }
+
+  .pos-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .pos-label .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 460px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 11px 14px;
+    white-space: nowrap;
+  }
+
+  thead th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 600;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--line);
+  }
+
+  tbody tr:nth-child(even) td {
+    background: var(--surface-2);
+  }
+
+  td.num, th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+  }
+
+  td.stat {
+    font-weight: 600;
+  }
+
+  .verdict {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .verdict.good { background: var(--good-soft); color: var(--good); }
+  .verdict.bad { background: var(--bad-soft); color: var(--bad); }
+  .verdict.neutral { background: var(--surface-2); color: var(--ink-dim); }
+
+  .method {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+    margin-top: 40px;
+  }
+  .method b { color: var(--ink); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pos-group { animation: rise 0.35s ease both; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-head">
+    <p class="eyebrow"><a href="index.html" style="color:inherit;text-decoration:none;">PAOK Hub</a></p>
+    <h1>PAOK vs League Average</h1>
+    <p class="sub">PAOK's per-game numbers against the Superleague average of all 14 teams, one stat at a time.</p>
+    <div class="meta-row">
+      <span class="meta-pill">Superleague 2026&ndash;27</span>
+      <span class="meta-pill">After matchday 4 &middot; per-game averages</span>
+    </div>
+  </header>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>General</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Stat</th>
+          <th class="num">PAOK</th>
+          <th class="num">League Avg</th>
+          <th>Verdict</th>
+        </tr></thead>
+        <tbody id="tbody-general"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Distribution</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Stat</th>
+          <th class="num">PAOK</th>
+          <th class="num">League Avg</th>
+          <th>Verdict</th>
+        </tr></thead>
+        <tbody id="tbody-distribution"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Attack</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Stat</th>
+          <th class="num">PAOK</th>
+          <th class="num">League Avg</th>
+          <th>Verdict</th>
+        </tr></thead>
+        <tbody id="tbody-attack"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Defence</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Stat</th>
+          <th class="num">PAOK</th>
+          <th class="num">League Avg</th>
+          <th>Verdict</th>
+        </tr></thead>
+        <tbody id="tbody-defence"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Discipline</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Stat</th>
+          <th class="num">PAOK</th>
+          <th class="num">League Avg</th>
+          <th>Verdict</th>
+        </tr></thead>
+        <tbody id="tbody-discipline"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pos-group">
+    <p class="pos-label"><span class="dot"></span>Goalkeeping</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Stat</th>
+          <th class="num">PAOK</th>
+          <th class="num">League Avg</th>
+          <th>Verdict</th>
+        </tr></thead>
+        <tbody id="tbody-goalkeeping"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="method">
+    <b>Source:</b> per-team season totals from <a href="teams-stats.html" style="color:inherit;">Teams Stats</a>, divided by 4 matches played. League Average is the unweighted mean across all 14 Superleague teams (PAOK included). Verdict compares PAOK to that average on stats where "higher" or "lower" has a clear meaning; volume/style stats (e.g. Passes, Tackles, Clearances) are shown for reference without a verdict.
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var paok = {"Passes":376.0,"LongPasses":47.5,"PassAcc":78.8,"PassAccOppHalf":71.3,"Crosses":13.0,"CrossAcc":21.2,"Goals":2.2,"Shots":11.2,"ShotsOnTarget":4.0,"BlockedShots":1.8,"ShotsOutsideBox":3.2,"ShotsInsideBox":8.0,"ShootAcc":35.6,"Tackles":17.5,"TackleSuccess":55.1,"Clearances":29.0,"FoulsConceded":16.2,"YellowCards":1.2,"RedCards":0.2,"DuelsSuccess":54.4,"AerialWonPct":56.7,"Interceptions":9.2,"Offsides":1.0,"Corners":3.5,"Saves":3.2,"ShotsFacedOnTarget":4.2,"SaveSuccess":76.5,"CrossesClaimed":0.5,"CrossesNotClaimed":0.0,"Drops":0.0,"Punches":1.0};
+
+  var avg = {"Passes":398.36,"LongPasses":50.16,"PassAcc":81.67,"PassAccOppHalf":73.82,"Crosses":18.51,"CrossAcc":26.76,"Goals":1.21,"Shots":12.8,"ShotsOnTarget":4.11,"BlockedShots":3.03,"ShotsOutsideBox":4.43,"ShotsInsideBox":8.38,"ShootAcc":30.53,"Tackles":14.27,"TackleSuccess":70.99,"Clearances":24.61,"FoulsConceded":16.09,"YellowCards":2.44,"RedCards":0.14,"DuelsSuccess":48.84,"AerialWonPct":49.8,"Interceptions":8.14,"Offsides":1.82,"Corners":4.16,"Saves":2.83,"ShotsFacedOnTarget":4.13,"SaveSuccess":69.49,"CrossesClaimed":0.72,"CrossesNotClaimed":0.0,"Drops":0.12,"Punches":0.52};
+
+  // true = higher is better, false = lower is better, null = no verdict (volume/style stat)
+  var direction = {
+    DuelsSuccess: true, AerialWonPct: true, Interceptions: true, Offsides: false, Corners: true,
+    Passes: null, LongPasses: null, PassAcc: true, PassAccOppHalf: true, Crosses: null, CrossAcc: true,
+    Goals: true, Shots: null, ShotsOnTarget: true, BlockedShots: null, ShotsOutsideBox: null, ShotsInsideBox: true, ShootAcc: true,
+    Tackles: null, TackleSuccess: true, Clearances: null,
+    FoulsConceded: false, YellowCards: false, RedCards: false,
+    Saves: null, ShotsFacedOnTarget: false, SaveSuccess: true, CrossesClaimed: true, CrossesNotClaimed: false, Drops: false, Punches: null
+  };
+
+  var pct = {
+    DuelsSuccess: true, AerialWonPct: true, PassAcc: true, PassAccOppHalf: true, CrossAcc: true, ShootAcc: true, TackleSuccess: true, SaveSuccess: true
+  };
+
+  var rows = {
+    general: [["DuelsSuccess","Duels success rate"],["AerialWonPct","Aerial duels won"],["Interceptions","Interceptions"],["Offsides","Offsides"],["Corners","Corners won"]],
+    distribution: [["Passes","Passes"],["LongPasses","Long passes"],["PassAcc","Passing accuracy"],["PassAccOppHalf","Passing accuracy in opp. half"],["Crosses","Crosses"],["CrossAcc","Crossing accuracy"]],
+    attack: [["Goals","Goals"],["Shots","Shots"],["ShotsOnTarget","Shots on target"],["BlockedShots","Blocked shots"],["ShotsOutsideBox","Shots outside the box"],["ShotsInsideBox","Shots inside the box"],["ShootAcc","Shooting accuracy"]],
+    defence: [["Tackles","Tackles won"],["TackleSuccess","Tackle success rate"],["Clearances","Clearances"]],
+    discipline: [["FoulsConceded","Fouls conceded"],["YellowCards","Yellow cards"],["RedCards","Red cards"]],
+    goalkeeping: [["Saves","Saves"],["ShotsFacedOnTarget","Shots faced on target"],["SaveSuccess","Save success rate"],["CrossesClaimed","Crosses claimed"],["CrossesNotClaimed","Crosses not claimed"],["Drops","Drops"],["Punches","Punches"]]
+  };
+
+  function fmt(key, v) {
+    return pct[key] ? v.toFixed(1) + '%' : v.toFixed(1);
+  }
+
+  function verdictCell(key) {
+    var dir = direction[key];
+    if (dir === null || dir === undefined) return '<span class="verdict neutral">&mdash;</span>';
+    var diff = paok[key] - avg[key];
+    var isBetter = dir ? diff > 0 : diff < 0;
+    var isEqual = Math.abs(diff) < 0.05;
+    if (isEqual) return '<span class="verdict neutral">Even</span>';
+    var sign = diff > 0 ? '+' : '';
+    var diffStr = sign + (pct[key] ? diff.toFixed(1) + 'pp' : diff.toFixed(1));
+    if (isBetter) return '<span class="verdict good">&#9650; Better (' + diffStr + ')</span>';
+    return '<span class="verdict bad">&#9660; Worse (' + diffStr + ')</span>';
+  }
+
+  Object.keys(rows).forEach(function (section) {
+    var body = document.getElementById('tbody-' + section);
+    rows[section].forEach(function (pair) {
+      var key = pair[0], label = pair[1];
+      body.insertAdjacentHTML('beforeend',
+        '<tr><td class="stat">' + label + '</td>' +
+        '<td class="num">' + fmt(key, paok[key]) + '</td>' +
+        '<td class="num">' + fmt(key, avg[key]) + '</td>' +
+        '<td>' + verdictCell(key) + '</td></tr>');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
