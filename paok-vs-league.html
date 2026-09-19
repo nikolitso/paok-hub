@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PAOK Hub — PAOK vs League Average</title>
+<title>PAOK Hub — PAOK vs Big-3 Average</title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 
@@ -236,8 +236,8 @@
 
   <header class="page-head">
     <p class="eyebrow"><a href="index.html" style="color:inherit;text-decoration:none;">PAOK Hub</a></p>
-    <h1>PAOK vs League Average</h1>
-    <p class="sub">PAOK's per-game numbers against the Superleague average of all 14 teams, one stat at a time.</p>
+    <h1>PAOK vs Big-3 Average</h1>
+    <p class="sub">PAOK's per-game numbers against the average of AEK, Olympiakos and Panathinaikos, one stat at a time.</p>
     <div class="meta-row">
       <span class="meta-pill">Superleague 2026&ndash;27</span>
       <span class="meta-pill">After matchday 4 &middot; per-game averages</span>
@@ -251,7 +251,7 @@
         <thead><tr>
           <th>Stat</th>
           <th class="num">PAOK</th>
-          <th class="num">League Avg</th>
+          <th class="num">Big-3 Avg</th>
           <th>Verdict</th>
         </tr></thead>
         <tbody id="tbody-general"></tbody>
@@ -266,7 +266,7 @@
         <thead><tr>
           <th>Stat</th>
           <th class="num">PAOK</th>
-          <th class="num">League Avg</th>
+          <th class="num">Big-3 Avg</th>
           <th>Verdict</th>
         </tr></thead>
         <tbody id="tbody-distribution"></tbody>
@@ -281,7 +281,7 @@
         <thead><tr>
           <th>Stat</th>
           <th class="num">PAOK</th>
-          <th class="num">League Avg</th>
+          <th class="num">Big-3 Avg</th>
           <th>Verdict</th>
         </tr></thead>
         <tbody id="tbody-attack"></tbody>
@@ -296,7 +296,7 @@
         <thead><tr>
           <th>Stat</th>
           <th class="num">PAOK</th>
-          <th class="num">League Avg</th>
+          <th class="num">Big-3 Avg</th>
           <th>Verdict</th>
         </tr></thead>
         <tbody id="tbody-defence"></tbody>
@@ -311,7 +311,7 @@
         <thead><tr>
           <th>Stat</th>
           <th class="num">PAOK</th>
-          <th class="num">League Avg</th>
+          <th class="num">Big-3 Avg</th>
           <th>Verdict</th>
         </tr></thead>
         <tbody id="tbody-discipline"></tbody>
@@ -326,16 +326,12 @@
         <thead><tr>
           <th>Stat</th>
           <th class="num">PAOK</th>
-          <th class="num">League Avg</th>
+          <th class="num">Big-3 Avg</th>
           <th>Verdict</th>
         </tr></thead>
         <tbody id="tbody-goalkeeping"></tbody>
       </table>
     </div>
-  </div>
-
-  <div class="method">
-    <b>Source:</b> per-team season totals from <a href="teams-stats.html" style="color:inherit;">Teams Stats</a>, divided by 4 matches played. League Average is the unweighted mean across all 14 Superleague teams (PAOK included). Verdict compares PAOK to that average on stats where "higher" or "lower" has a clear meaning; volume/style stats (e.g. Passes, Tackles, Clearances) are shown for reference without a verdict.
   </div>
 
 </div>
@@ -344,7 +340,7 @@
 (function () {
   var paok = {"Passes":376.0,"LongPasses":47.5,"PassAcc":78.8,"PassAccOppHalf":71.3,"Crosses":13.0,"CrossAcc":21.2,"Goals":2.2,"Shots":11.2,"ShotsOnTarget":4.0,"BlockedShots":1.8,"ShotsOutsideBox":3.2,"ShotsInsideBox":8.0,"ShootAcc":35.6,"Tackles":17.5,"TackleSuccess":55.1,"Clearances":29.0,"FoulsConceded":16.2,"YellowCards":1.2,"RedCards":0.2,"DuelsSuccess":54.4,"AerialWonPct":56.7,"Interceptions":9.2,"Offsides":1.0,"Corners":3.5,"Saves":3.2,"ShotsFacedOnTarget":4.2,"SaveSuccess":76.5,"CrossesClaimed":0.5,"CrossesNotClaimed":0.0,"Drops":0.0,"Punches":1.0};
 
-  var avg = {"Passes":398.36,"LongPasses":50.16,"PassAcc":81.67,"PassAccOppHalf":73.82,"Crosses":18.51,"CrossAcc":26.76,"Goals":1.21,"Shots":12.8,"ShotsOnTarget":4.11,"BlockedShots":3.03,"ShotsOutsideBox":4.43,"ShotsInsideBox":8.38,"ShootAcc":30.53,"Tackles":14.27,"TackleSuccess":70.99,"Clearances":24.61,"FoulsConceded":16.09,"YellowCards":2.44,"RedCards":0.14,"DuelsSuccess":48.84,"AerialWonPct":49.8,"Interceptions":8.14,"Offsides":1.82,"Corners":4.16,"Saves":2.83,"ShotsFacedOnTarget":4.13,"SaveSuccess":69.49,"CrossesClaimed":0.72,"CrossesNotClaimed":0.0,"Drops":0.12,"Punches":0.52};
+  var avg = {"Passes":527.4,"LongPasses":45.83,"PassAcc":86.93,"PassAccOppHalf":81.03,"Crosses":25.73,"CrossAcc":28.73,"Goals":1.93,"Shots":19.83,"ShotsOnTarget":7.4,"BlockedShots":4.73,"ShotsOutsideBox":6.0,"ShotsInsideBox":13.83,"ShootAcc":37.33,"Tackles":14.8,"TackleSuccess":70.07,"Clearances":15.27,"FoulsConceded":16.27,"YellowCards":1.97,"RedCards":0.13,"DuelsSuccess":49.33,"AerialWonPct":54.67,"Interceptions":6.3,"Offsides":2.53,"Corners":6.63,"Saves":2.07,"ShotsFacedOnTarget":2.6,"SaveSuccess":80.6,"CrossesClaimed":0.67,"CrossesNotClaimed":0.0,"Drops":0.07,"Punches":0.13};
 
   // true = higher is better, false = lower is better, null = no verdict (volume/style stat)
   var direction = {
