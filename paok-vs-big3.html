@@ -338,9 +338,9 @@
 
 <script>
 (function () {
-  var paok = {"xG":1.8,"xGA":1.45,"Passes":376.0,"LongPasses":47.5,"PassAcc":78.8,"PassAccOppHalf":71.3,"Crosses":13.0,"CrossAcc":21.2,"Goals":2.2,"Shots":11.2,"ShotsOnTarget":4.0,"BlockedShots":1.8,"ShotsOutsideBox":3.2,"ShotsInsideBox":8.0,"ShootAcc":35.6,"Tackles":17.5,"TackleSuccess":55.1,"Clearances":29.0,"FoulsConceded":16.2,"YellowCards":1.2,"RedCards":0.2,"DuelsSuccess":54.4,"AerialWonPct":56.7,"Interceptions":9.2,"Offsides":1.0,"Corners":3.5,"Saves":3.2,"ShotsFacedOnTarget":4.2,"SaveSuccess":76.5,"CrossesClaimed":0.5,"CrossesNotClaimed":0.0,"Drops":0.0,"Punches":1.0};
+  var paok = {"xG":1.8,"xGA":1.45,"Passes":376.0,"LongPasses":47.5,"PassAcc":78.8,"PassAccOppHalf":71.3,"Crosses":13.0,"CrossAcc":21.2,"Goals":2.2,"Shots":11.2,"ShotsOnTarget":4.0,"BlockedShots":1.8,"ShotsOutsideBox":3.2,"ShotsInsideBox":8.0,"ShootAcc":35.6,"Tackles":17.5,"TackleSuccess":55.1,"Clearances":29.0,"FoulsConceded":16.2,"YellowCards":1.2,"RedCards":0.2,"DuelsSuccess":54.4,"AerialWonPct":56.7,"Interceptions":9.2,"Offsides":1.0,"Corners":3.5,"Saves":3.2,"ShotsFacedOnTarget":4.2,"SaveSuccess":76.5,"CrossesClaimed":0.5,"Drops":0.0,"Punches":1.0};
 
-  var avg = {"xG":2.18,"xGA":0.72,"Passes":527.4,"LongPasses":45.83,"PassAcc":86.93,"PassAccOppHalf":81.03,"Crosses":25.73,"CrossAcc":28.73,"Goals":1.93,"Shots":19.83,"ShotsOnTarget":7.4,"BlockedShots":4.73,"ShotsOutsideBox":6.0,"ShotsInsideBox":13.83,"ShootAcc":37.33,"Tackles":14.8,"TackleSuccess":70.07,"Clearances":15.27,"FoulsConceded":16.27,"YellowCards":1.97,"RedCards":0.13,"DuelsSuccess":49.33,"AerialWonPct":54.67,"Interceptions":6.3,"Offsides":2.53,"Corners":6.63,"Saves":2.07,"ShotsFacedOnTarget":2.6,"SaveSuccess":80.6,"CrossesClaimed":0.67,"CrossesNotClaimed":0.0,"Drops":0.07,"Punches":0.13};
+  var avg = {"xG":2.18,"xGA":0.72,"Passes":527.4,"LongPasses":45.83,"PassAcc":86.93,"PassAccOppHalf":81.03,"Crosses":25.73,"CrossAcc":28.73,"Goals":1.93,"Shots":19.83,"ShotsOnTarget":7.4,"BlockedShots":4.73,"ShotsOutsideBox":6.0,"ShotsInsideBox":13.83,"ShootAcc":37.33,"Tackles":14.8,"TackleSuccess":70.07,"Clearances":15.27,"FoulsConceded":16.27,"YellowCards":1.97,"RedCards":0.13,"DuelsSuccess":49.33,"AerialWonPct":54.67,"Interceptions":6.3,"Offsides":2.53,"Corners":6.63,"Saves":2.07,"ShotsFacedOnTarget":2.6,"SaveSuccess":80.6,"CrossesClaimed":0.67,"Drops":0.07,"Punches":0.13};
 
   // true = higher is better, false = lower is better
   var direction = {
@@ -349,7 +349,7 @@
     xG: true, Goals: true, Shots: true, ShotsOnTarget: true, BlockedShots: false, ShotsOutsideBox: true, ShotsInsideBox: true, ShootAcc: true,
     xGA: false, Tackles: true, TackleSuccess: true, Clearances: false,
     FoulsConceded: false, YellowCards: false, RedCards: false,
-    Saves: false, ShotsFacedOnTarget: false, SaveSuccess: true, CrossesClaimed: true, CrossesNotClaimed: false, Drops: false, Punches: true
+    Saves: false, ShotsFacedOnTarget: false, SaveSuccess: true, CrossesClaimed: true, Drops: false, Punches: true
   };
 
   var pct = {
@@ -362,7 +362,7 @@
     attack: [["xG","Expected goals (xG)"],["Goals","Goals"],["Shots","Shots"],["ShotsOnTarget","Shots on target"],["BlockedShots","Blocked shots"],["ShotsOutsideBox","Shots outside the box"],["ShotsInsideBox","Shots inside the box"],["ShootAcc","Shooting accuracy"]],
     defence: [["xGA","Expected goals against (xGA)"],["Tackles","Tackles won"],["TackleSuccess","Tackle success rate"],["Clearances","Clearances"]],
     discipline: [["FoulsConceded","Fouls conceded"],["YellowCards","Yellow cards"],["RedCards","Red cards"]],
-    goalkeeping: [["Saves","Saves"],["ShotsFacedOnTarget","Shots faced on target"],["SaveSuccess","Save success rate"],["CrossesClaimed","Crosses claimed"],["CrossesNotClaimed","Crosses not claimed"],["Drops","Drops"],["Punches","Punches"]]
+    goalkeeping: [["Saves","Saves"],["ShotsFacedOnTarget","Shots faced on target"],["SaveSuccess","Save success rate"],["CrossesClaimed","Crosses claimed"],["Drops","Drops"],["Punches","Punches"]]
   };
 
   function fmt(key, v) {
