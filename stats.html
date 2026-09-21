@@ -18,6 +18,7 @@
     --accent: #1c1f6b;
     --accent-soft: #e7e8f5;
     --good: #1a7a4c;
+    --scroll-fade: rgba(0, 0, 0, 0.16);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -30,6 +31,7 @@
       --line: #2b2d33;
       --accent: #8f96ff;
       --good: #4fce94;
+      --scroll-fade: rgba(255, 255, 255, 0.14);
     }
   }
 
@@ -42,6 +44,7 @@
     --line: #2b2d33;
     --accent: #8f96ff;
     --good: #4fce94;
+    --scroll-fade: rgba(255, 255, 255, 0.14);
   }
 
   * { box-sizing: border-box; }
@@ -136,7 +139,16 @@
     overflow-x: auto;
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: var(--surface);
+    background-color: var(--surface);
+    background-image:
+      linear-gradient(to right, var(--surface) 50%, transparent),
+      linear-gradient(to left, var(--surface) 50%, transparent),
+      linear-gradient(to right, var(--scroll-fade), transparent),
+      linear-gradient(to left, var(--scroll-fade), transparent);
+    background-position: left, right, left, right;
+    background-repeat: no-repeat;
+    background-size: 24px 100%, 24px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, local, scroll, scroll;
   }
 
   table {
