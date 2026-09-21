@@ -19,6 +19,8 @@
     --accent-soft: #e7e8f5;
     --good: #1a7a4c;
     --bad: #a4402a;
+    --champion: #D4AF37;
+    --relegated: #DC2626;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -33,6 +35,8 @@
       --accent-soft: #232650;
       --good: #4fce94;
       --bad: #e8917c;
+      --champion: #C9A227;
+      --relegated: #D64545;
     }
   }
 
@@ -47,6 +51,8 @@
     --accent-soft: #232650;
     --good: #4fce94;
     --bad: #e8917c;
+    --champion: #C9A227;
+    --relegated: #D64545;
   }
 
   * { box-sizing: border-box; }
@@ -122,6 +128,11 @@
 
   tr.paok td { background: var(--accent-soft); }
   tr.paok td.team { color: var(--accent); }
+
+  tr.champion td { background: color-mix(in srgb, var(--champion) 20%, var(--surface)); }
+  tr.champion td.team { color: color-mix(in srgb, var(--champion) 65%, var(--ink)); font-weight: 700; }
+  tr.relegated td { background: color-mix(in srgb, var(--relegated) 14%, var(--surface)); }
+  tr.relegated td.team { color: var(--relegated); }
 
   td.gd.pos-num { color: var(--good); }
   td.gd.neg-num { color: var(--bad); }
@@ -234,7 +245,7 @@
         </tr>
       </thead>
         <tbody>
-        <tr><td class="pos">1</td><td class="team"><div class="team-cell"><img class="crest" src="https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=7ruua9q5rtswwi5d6xtquuto5" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">AEK</div></td><td class="num">36</td><td class="num">26</td><td class="num">4</td><td class="num">6</td><td class="num">82</td><td class="num no-caps">73.0</td><td class="num"><span class="pm-badge pos-num">+9.0</span></td><td class="num"><span class="dpos-badge zero">0</span></td><td class="num">54.8</td><td class="num">69</td><td class="num">18.7</td><td class="num">18</td><td class="num xgd pos-num">+36.1</td><td class="num gd pos-num">+51</td></tr>
+        <tr class="champion"><td class="pos">1</td><td class="team"><div class="team-cell"><img class="crest" src="https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=7ruua9q5rtswwi5d6xtquuto5" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">AEK</div></td><td class="num">36</td><td class="num">26</td><td class="num">4</td><td class="num">6</td><td class="num">82</td><td class="num no-caps">73.0</td><td class="num"><span class="pm-badge pos-num">+9.0</span></td><td class="num"><span class="dpos-badge zero">0</span></td><td class="num">54.8</td><td class="num">69</td><td class="num">18.7</td><td class="num">18</td><td class="num xgd pos-num">+36.1</td><td class="num gd pos-num">+51</td></tr>
         <tr><td class="pos">2</td><td class="team"><div class="team-cell"><img class="crest" src="https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9ghx7vbghs3628n5chm9r8ig3" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">Olympiakos</div></td><td class="num">36</td><td class="num">23</td><td class="num">8</td><td class="num">5</td><td class="num">77</td><td class="num no-caps">65.3</td><td class="num"><span class="pm-badge pos-num">+11.7</span></td><td class="num"><span class="dpos-badge zero">0</span></td><td class="num">51.8</td><td class="num">72</td><td class="num">25.6</td><td class="num">24</td><td class="num xgd pos-num">+26.2</td><td class="num gd pos-num">+48</td></tr>
         <tr><td class="pos">3</td><td class="team"><div class="team-cell"><img class="crest" src="https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=4ws3k9155net1ydbvr8c940dy" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">Panathinaikos</div></td><td class="num">36</td><td class="num">23</td><td class="num">8</td><td class="num">5</td><td class="num">77</td><td class="num no-caps">65.2</td><td class="num"><span class="pm-badge pos-num">+11.8</span></td><td class="num"><span class="dpos-badge zero">0</span></td><td class="num">47.2</td><td class="num">47</td><td class="num">21.5</td><td class="num">17</td><td class="num xgd pos-num">+25.7</td><td class="num gd pos-num">+30</td></tr>
         <tr class="paok"><td class="pos">4</td><td class="team"><div class="team-cell"><img class="crest" src="https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=deazflnflqmejndo05gviznzd" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">PAOK</div></td><td class="num">36</td><td class="num">19</td><td class="num">10</td><td class="num">7</td><td class="num">67</td><td class="num no-caps">64.2</td><td class="num"><span class="pm-badge pos-num">+2.8</span></td><td class="num"><span class="dpos-badge zero">0</span></td><td class="num">47.7</td><td class="num">57</td><td class="num">26.6</td><td class="num">32</td><td class="num xgd pos-num">+21.1</td><td class="num gd pos-num">+25</td></tr>
