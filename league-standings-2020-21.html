@@ -19,6 +19,7 @@
     --accent-soft: #e7e8f5;
     --good: #1a7a4c;
     --bad: #a4402a;
+    --cyan: #0e7f9c;
     --champion: #D4AF37;
     --relegated: #DC2626;
   }
@@ -35,6 +36,7 @@
       --accent-soft: #232650;
       --good: #4fce94;
       --bad: #e8917c;
+      --cyan: #3cc6e6;
       --champion: #C9A227;
       --relegated: #D64545;
     }
@@ -51,6 +53,7 @@
     --accent-soft: #232650;
     --good: #4fce94;
     --bad: #e8917c;
+    --cyan: #3cc6e6;
     --champion: #C9A227;
     --relegated: #D64545;
   }
@@ -166,15 +169,18 @@
   }
 
   .spotlight-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 12px; margin-top: 24px;
   }
+  @media (max-width: 640px) { .spotlight-grid { grid-template-columns: 1fr; } }
   .spotlight-card {
-    background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--edge);
-    border-radius: 8px; padding: 14px 16px;
+    background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--edge);
+    border-radius: 6px; padding: 14px 16px;
   }
   .spotlight-card.luck { --edge: var(--good); }
   .spotlight-card.hard { --edge: var(--bad); }
+  .spotlight-card.xgd { --edge: var(--cyan); }
+  .spotlight-card.xgd .value { color: var(--cyan); }
   .spotlight-card .label {
     font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--ink-dim); margin-bottom: 6px;
@@ -214,14 +220,19 @@
     </div>
     <div class="spotlight-grid">
       <div class="spotlight-card luck">
-        <div class="label">Riding their luck</div>
+        <div class="label">Above expectation</div>
         <div class="team">Olympiakos</div>
-        <div class="value">+13.7 pts vs xP</div>
+        <div class="value">+13.7 pts vs xPts</div>
       </div>
       <div class="spotlight-card hard">
-        <div class="label">Hard done by</div>
+        <div class="label">Below expectation</div>
         <div class="team">OFI</div>
-        <div class="value">&minus;10.7 pts vs xP</div>
+        <div class="value">&minus;10.7 pts vs xPts</div>
+      </div>
+      <div class="spotlight-card xgd">
+        <div class="label">Best xG difference</div>
+        <div class="team">Olympiakos</div>
+        <div class="value">+1.15 per match</div>
       </div>
     </div>
   </header>
