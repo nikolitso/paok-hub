@@ -399,16 +399,31 @@
     try { return JSON.parse(m[1]); } catch (e) { return null; }
   }
 
+  // Locate columns by header text, not position, so layout changes on the standings page can't break this.
+  function standingsColumns(standingsDoc) {
+    var cols = {}, idx = 0;
+    var firstRow = standingsDoc.querySelector('thead tr');
+    if (!firstRow) return cols;
+    firstRow.querySelectorAll('th').forEach(function (th) {
+      cols[th.textContent.trim()] = idx;
+      idx += parseInt(th.getAttribute('colspan') || '1', 10);
+    });
+    return cols;
+  }
+
   function findTeamXg(standingsDoc, teamName) {
+    var cols = standingsColumns(standingsDoc);
+    if (cols.xG === undefined || cols.xGA === undefined || cols.P === undefined) return null;
     var trs = standingsDoc.querySelectorAll('tbody tr');
     for (var i = 0; i < trs.length; i++) {
       var tds = trs[i].querySelectorAll('td');
-      if (tds.length < 12) continue;
+      if (tds.length <= cols.xGA) continue;
       var cellName = tds[1].textContent.trim();
       if (cellName === teamName) {
-        var mp = parseFloat(tds[2].textContent) || 4;
-        var xg = parseFloat(tds[9].textContent) || 0;
-        var xga = parseFloat(tds[11].textContent) || 0;
+        var mp = parseFloat(tds[cols.P].textContent);
+        if (!mp) return null;
+        var xg = parseFloat(tds[cols.xG].textContent) || 0;
+        var xga = parseFloat(tds[cols.xGA].textContent) || 0;
         return { xG: Math.round((xg / mp) * 100) / 100, xGA: Math.round((xga / mp) * 100) / 100 };
       }
     }
