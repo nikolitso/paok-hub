@@ -188,6 +188,11 @@
     text-align: center; border-bottom: 1px solid var(--line);
     color: var(--accent);
   }
+  th[data-col] { cursor: pointer; user-select: none; }
+  th[data-col]:hover { color: var(--ink); }
+  th[data-col]::after { content: "95"; opacity: .35; margin-left: 3px; font-size: 10px; }
+  th[data-col][aria-sort="ascending"]::after { content: "B2"; opacity: 1; color: var(--accent); }
+  th[data-col][aria-sort="descending"]::after { content: "BC"; opacity: 1; color: var(--accent); }
 </style>
 </head>
 <body>
@@ -239,26 +244,26 @@
     <table>
       <thead>
         <tr>
-          <th class="pos" rowspan="2">Pos</th><th rowspan="2">Team</th>
-          <th class="num" rowspan="2" title="Played">P</th>
-          <th class="num" rowspan="2">W</th><th class="num" rowspan="2">D</th><th class="num" rowspan="2">L</th>
+          <th data-col="0" class="pos" rowspan="2">Pos</th><th data-col="1" rowspan="2">Team</th>
+          <th data-col="2" class="num" rowspan="2" title="Played">P</th>
+          <th data-col="3" class="num" rowspan="2">W</th><th data-col="4" class="num" rowspan="2">D</th><th data-col="5" class="num" rowspan="2">L</th>
           <th class="num group-head" colspan="3" title="Points, expected points and the difference between them">Points</th>
-          <th class="num" rowspan="2" title="Position deviation: xPts-ranked position minus real-points-ranked position. Positive (▲) means the team's real position is better than its underlying numbers suggest; negative (▼) means worse.">&Delta;Pos</th>
-          <th class="num no-caps" rowspan="2" title="Expected goals for, total across the season">xG</th>
-          <th class="num" rowspan="2" title="Goals for">GF</th>
-          <th class="num no-caps" rowspan="2" title="Expected goals against, total across the season">xGA</th>
-          <th class="num" rowspan="2" title="Goals against">GA</th>
-          <th class="num no-caps" rowspan="2" title="Expected goal difference (xG minus xGA)">xGD</th>
-          <th class="num" rowspan="2" title="Goal difference">GD</th>
+          <th data-col="9" class="num" rowspan="2" title="Position deviation: xPts-ranked position minus real-points-ranked position. Positive (▲) means the team's real position is better than its underlying numbers suggest; negative (▼) means worse.">&Delta;Pos</th>
+          <th data-col="10" class="num no-caps" rowspan="2" title="Expected goals for, total across the season">xG</th>
+          <th data-col="11" class="num" rowspan="2" title="Goals for">GF</th>
+          <th data-col="12" class="num no-caps" rowspan="2" title="Expected goals against, total across the season">xGA</th>
+          <th data-col="13" class="num" rowspan="2" title="Goals against">GA</th>
+          <th data-col="14" class="num no-caps" rowspan="2" title="Expected goal difference (xG minus xGA)">xGD</th>
+          <th data-col="15" class="num" rowspan="2" title="Goal difference">GD</th>
           <th class="num group-head" colspan="3" title="Big chances created and conceded, per match">Big chances</th>
         </tr>
         <tr>
-          <th class="num" title="Points">Pts</th>
-          <th class="num no-caps" title="Expected points, sum across matches (Poisson model from each match xG). Ranked by this column.">xP</th>
-          <th class="num" title="Points minus expected points">+/&minus;</th>
-          <th class="num" title="Big chances for, per match">F</th>
-          <th class="num" title="Big chances against, per match">A</th>
-          <th class="num" title="Big chance difference, per match">Diff</th>
+          <th data-col="6" class="num" title="Points">Pts</th>
+          <th data-col="7" class="num no-caps" title="Expected points, sum across matches (Poisson model from each match xG). Ranked by this column.">xP</th>
+          <th data-col="8" class="num" title="Points minus expected points">+/&minus;</th>
+          <th data-col="16" class="num" title="Big chances for, per match">F</th>
+          <th data-col="17" class="num" title="Big chances against, per match">A</th>
+          <th data-col="18" class="num" title="Big chance difference, per match">Diff</th>
         </tr>
       </thead>
       <tbody>
@@ -281,6 +286,33 @@
   </div>
 
 </div>
+
+<script>
+// sortable columns: click a header to sort, click again to flip. Numbers start high-to-low,
+// Pos and Team start A-Z / 1-14; the Pos column keeps each team's real league position.
+(function () {
+  const table = document.querySelector('.table-scroll table'), body = table.tBodies[0];
+  const ths = [...table.querySelectorAll('th[data-col]')];
+  const val = (tr, c) => {
+    const t = tr.cells[c].textContent.trim();
+    if (c === 1) return t.toLowerCase();
+    return parseFloat(t.replace('−', '-').replace('▼', '-').replace('▲', '')) || 0;
+  };
+  ths.forEach(th => th.addEventListener('click', () => {
+    const c = +th.dataset.col, up = c <= 1;
+    const dir = th.getAttribute('aria-sort') === (up ? 'ascending' : 'descending') ? -1 : 1;
+    const asc = up ? dir === 1 : dir === -1;
+    ths.forEach(x => x.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+    const rows = [...body.rows].sort((a, b) => {
+      const x = val(a, c), y = val(b, c);
+      const d = x < y ? -1 : x > y ? 1 : 0;
+      return (asc ? d : -d) || (+a.cells[0].textContent - +b.cells[0].textContent);
+    });
+    rows.forEach(r => body.appendChild(r));
+  }));
+})();
+</script>
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b67bbb76d0e24af196b24ded3ab71ad0"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
