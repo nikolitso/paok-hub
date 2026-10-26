@@ -190,9 +190,10 @@
   }
   th[data-col] { cursor: pointer; user-select: none; }
   th[data-col]:hover { color: var(--ink); }
-  th[data-col]::after { content: "95"; opacity: .35; margin-left: 3px; font-size: 10px; }
-  th[data-col][aria-sort="ascending"]::after { content: "B2"; opacity: 1; color: var(--accent); }
-  th[data-col][aria-sort="descending"]::after { content: "BC"; opacity: 1; color: var(--accent); }
+  th[data-col]::after { content: "↕"; opacity: 0; margin-left: 3px; font-size: 10px; }
+  th[data-col]:hover::after { opacity: .5; }
+  th[data-col][aria-sort="ascending"]::after { content: "▲"; opacity: 1; color: var(--accent); }
+  th[data-col][aria-sort="descending"]::after { content: "▼"; opacity: 1; color: var(--accent); }
 </style>
 </head>
 <body>
