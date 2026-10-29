@@ -341,7 +341,7 @@
   // true = higher is better, false = lower is better
   var direction = {
     DuelsSuccess: true, AerialWonPct: true, Interceptions: true, Offsides: false, Corners: true,
-    Passes: true, LongPasses: false, PassAcc: true, PassAccOppHalf: true, Crosses: true, CrossAcc: true,
+    Passes: true, LongPasses: false, PassAcc: true, Crosses: true, CrossAcc: true,
     xG: true, Goals: true, Shots: true, ShotsOnTarget: true, BlockedShots: false, ShotsOutsideBox: true, ShotsInsideBox: true, ShootAcc: true,
     xGA: false, Tackles: true, TackleSuccess: true, Clearances: false,
     FoulsConceded: false, YellowCards: false, RedCards: false,
@@ -349,12 +349,12 @@
   };
 
   var pct = {
-    DuelsSuccess: true, AerialWonPct: true, PassAcc: true, PassAccOppHalf: true, CrossAcc: true, ShootAcc: true, TackleSuccess: true, SaveSuccess: true
+    DuelsSuccess: true, AerialWonPct: true, PassAcc: true, CrossAcc: true, ShootAcc: true, TackleSuccess: true, SaveSuccess: true
   };
 
   var rows = {
     general: [["DuelsSuccess","Duels success rate"],["AerialWonPct","Aerial duels won"],["Interceptions","Interceptions"],["Offsides","Offsides"],["Corners","Corners won"]],
-    distribution: [["Passes","Passes"],["LongPasses","Long passes"],["PassAcc","Passing accuracy"],["PassAccOppHalf","Passing accuracy in opp. half"],["Crosses","Crosses"],["CrossAcc","Crossing accuracy"]],
+    distribution: [["Passes","Passes"],["LongPasses","Long passes"],["PassAcc","Passing accuracy"],["Crosses","Crosses"],["CrossAcc","Crossing accuracy"]],
     attack: [["xG","Expected goals (xG)"],["Goals","Goals"],["Shots","Shots"],["ShotsOnTarget","Shots on target"],["BlockedShots","Blocked shots"],["ShotsOutsideBox","Shots outside the box"],["ShotsInsideBox","Shots inside the box"],["ShootAcc","Shooting accuracy"]],
     defence: [["xGA","Expected goals against (xGA)"],["Tackles","Tackles won"],["TackleSuccess","Tackle success rate"],["Clearances","Clearances"]],
     discipline: [["FoulsConceded","Fouls conceded"],["YellowCards","Yellow cards"],["RedCards","Red cards"]],
