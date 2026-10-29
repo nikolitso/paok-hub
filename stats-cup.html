@@ -111,6 +111,45 @@
     margin-top: 30px;
   }
 
+  .stat-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 26px;
+  }
+
+  .stat-tab {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink-dim);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px;
+    cursor: pointer;
+  }
+
+  .stat-tab:hover { color: var(--ink); }
+
+  .stat-tab[aria-selected="true"] {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .pos-group[hidden] { display: none; }
+
+  .matches-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    margin: 12px 0 0;
+    line-height: 1.6;
+  }
+
   .pos-label {
     display: flex;
     align-items: center;
@@ -148,7 +187,7 @@
 
   th, td {
     text-align: left;
-    padding: 11px 14px;
+    padding: 11px 12px;
     white-space: nowrap;
   }
 
@@ -257,7 +296,15 @@
     <div class="meta-row">
       <span class="meta-pill">3 matches played</span>
     </div>
+    <p class="matches-line">PAOK 0&ndash;0 OFI (2 Sep) &middot; Atromitos 0&ndash;1 PAOK (16 Sep) &middot; PAOK 3&ndash;1 AEK (28 Oct)</p>
   </header>
+
+  <div class="stat-tabs" role="tablist">
+    <button class="stat-tab" role="tab" data-tab="Goalkeeping">Goalkeeping</button>
+    <button class="stat-tab" role="tab" data-tab="Defensive">Defensive</button>
+    <button class="stat-tab" role="tab" data-tab="Passing">Passing</button>
+    <button class="stat-tab" role="tab" data-tab="Attacking">Attacking</button>
+  </div>
 
   <div class="pos-group">
     <p class="pos-label"><span class="dot"></span>Goalkeeping</p>
@@ -324,7 +371,7 @@
           <tr><td class="player">Diego Costa</td><td class="num">2</td><td class="num">180</td><td class="num">87</td><td class="num">18</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
           <tr><td class="player">Mythou</td><td class="num">3</td><td class="num">178</td><td class="num">33</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr>
           <tr><td class="player">Chatsidis</td><td class="num">3</td><td class="num">174</td><td class="num">30</td><td class="num">1</td><td class="num">1</td><td class="num">4</td><td class="num">2</td><td class="num">0</td><td class="num">1</td></tr>
-          <tr><td class="player">Zivkovic</td><td class="num">2</td><td class="num">153</td><td class="num">70</td><td class="num">7</td><td class="num">5</td><td class="num">14</td><td class="num">0</td><td class="num">1</td><td class="num">6</td></tr>
+          <tr><td class="player">Zivkovic</td><td class="num">2</td><td class="num">153</td><td class="num">70</td><td class="num">7</td><td class="num">5</td><td class="num">14</td><td class="num">1</td><td class="num">1</td><td class="num">6</td></tr>
           <tr><td class="player">Ugresic</td><td class="num">2</td><td class="num">143</td><td class="num">50</td><td class="num">4</td><td class="num">2</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">2</td></tr>
           <tr><td class="player">Ndiaye</td><td class="num">3</td><td class="num">131</td><td class="num">24</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">2</td></tr>
           <tr><td class="player">Bataoulas</td><td class="num">2</td><td class="num">114</td><td class="num">61</td><td class="num">9</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td></tr>
@@ -380,10 +427,25 @@
         </tbody>
       </table>
     </div>
-      <p class="note-line">PAOK 3&ndash;1 AEK (28 Oct) is from Flashscore's player stats, which don't include corners won (Crn) or crosses claimed (CC) &mdash; those count 0 for that match.</p>
   </div>
 
 </div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.stat-tab');
+  var groups = document.querySelectorAll('.pos-group');
+  function show(name) {
+    groups.forEach(function (g) {
+      var label = g.querySelector('.pos-label');
+      g.hidden = !label || label.textContent.trim() !== name;
+    });
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.tab === name ? 'true' : 'false'); });
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.tab); }); });
+  show('Attacking');
+})();
+</script>
 
 <script>
 (function () {
